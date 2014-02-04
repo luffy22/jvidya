@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.2" type="template">
+        <name>Jyotishi_Vidya</name>
+        <creationDate>2014-01-27</creationDate>
+        <author>Luffy Mugiwara</author>
+        <authorEmail>john@example.com</authorEmail>
+        <authorUrl>http://www.linkedin.com/profile/view?id=246015976</authorUrl>
+        <license>GNU/GPL</license>
+        <version>1.0</version>
+        <description>New Site Template</description>
+        <files>
+                <filename>index.php</filename>
+                <filename>templateDetails.xml</filename>
+                <folder>images</folder>
+                <folder>css</folder>
+                <folder>js</folder>
+                <folder>html</folder>
+        </files>
+        <positions>
+                <position>breadcrumbs</position>
+                <position>menu</position>
+                <position>userlogin</position>
+                <position>articlecontent</position>
+                <position>footer</position>
+                <position>socialplugins</position>
+                <position>sidebar</position>
+                <position>adwords</position>
+        </positions>
+</extension>
