@@ -72,8 +72,8 @@
 					type="radio"
 					class="btn-group btn-group-yesno"
 					default="1"
-					label="MOD_MENU_FIELD_ALLCHILDREN_LABEL"
-					description="MOD_MENU_FIELD_ALLCHILDREN_DESC">
+					label="Show all Submenus"
+					description="Shows all children">
 					<option value="1">JYES</option>
 					<option value="0">JNO</option>
 				</field>

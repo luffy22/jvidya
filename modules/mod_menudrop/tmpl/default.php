@@ -5,18 +5,11 @@
  * Prints the navigation with css
  */
  defined('_JEXEC') or die;
- ?>
+?>
+<html>
+    <body>
+        <a href="<?php echo $menuBase; ?>"><?php echo $menuActive; ?></a>
+    </body>
+</html>
  
-<div class="btn-group">
-  <a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" href="#">
-    Action
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu">
-    <li>Some Links</li>
-    <li>Some Links</li>
-    <li>Some Links</li>
-    <li>Some Links</li>
-    <li>Some Links</li>
-  </ul>
-</div>
+

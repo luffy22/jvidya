@@ -8,18 +8,8 @@
 	
 	defined('_JEXEC') or die;
 	// Include function only once
-	require_once(dir(__FILE__).'/helper.php');
+	require_once __DIR__ . '/helper.php';
 	
-	$list		= modMenuDropHelper::getList($params);
-	$base 		= modMenuDropHelper::getBase($params);
-	$active		= modMenuDropHelper::getActive($params);
-	$active_id	= $active->id;
-	$path		= $base->tree;
-	
-	$showAll	= $params->get('showAllChildren');
-	$class_sfx	= htmlspecialchars($params->get('class_sfx'));
-	
-	if(count($list))
-	{
-		require JModuleHelper::getLayoutPath('mod_menudrop',$params->get('layout', 'default'));
-	}
+	$menuActive     = modMenuDropHelper::getActive( $params );
+        $menuBase       = modMenuDropHelper::getBase($params);
+        require( JModuleHelper::getLayoutPath( 'mod_menudrop' ) );
