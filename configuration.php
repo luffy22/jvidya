@@ -6,7 +6,7 @@ class JConfig {
 	public $offline_image = '';
 	public $sitename = 'JyotishiVidya';
 	public $editor = 'none';
-	public $captcha = 'recaptcha';
+	public $captcha = '0';
 	public $list_limit = '20';
 	public $access = '1';
 	public $debug = '0';
@@ -59,7 +59,7 @@ class JConfig {
 	public $lifetime = '15';
 	public $session_handler = 'database';
 	public $MetaRights = '';
-	public $sitename_pagetitles = '0';
+	public $sitename_pagetitles = '1';
 	public $force_ssl = '0';
 	public $frontediting = '0';
 	public $feed_email = 'author';

@@ -19,6 +19,8 @@
         <positions>
                 <position>breadcrumbs</position>
                 <position>menu</position>
+                <position>menu1</position>
+                <position>menu2</position>
                 <position>userlogin</position>
                 <position>articlecontent</position>
                 <position>footer</position>
