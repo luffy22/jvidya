@@ -15,20 +15,42 @@ class modMenuDropHelper
 	 */
 	public static function getBase(&$params)
 	{
-
-		// Get default menu - JMenu object, look at JMenu api docs
-                $active = JFactory::getApplication()->getMenu()->getActive();
-                $link   = $active->link; 
-                return $link;
+            // Get default menu - JMenu object, look at JMenu api docs
+           $active      = self::getActive($params);
+           $base        = JFactory::getApplication()->getMenu()->getItem($active);
+           return $base;
         }
 
-
+        public static function getActiveId(&$params)
+        {
+            $active     = JFactory::getApplication()->getMenu()->getActive();
+            $activeid   = $active->id;
+            return $activeid;
+        }
 	public static function getActive(&$params)
 	{
-              $active = JFactory::getApplication()->getMenu()->getActive();
-              $title  = $active->title;
-              return $title;
+            $active = JFactory::getApplication()->getMenu()->getActive();
+            $title  = $active->title;
+            return $title;
 	}
+      
+        public static function getList($params)
+        {
+           $menu          = JFactory::getApplication()->getMenu();
+           // base method
+                    
+           //$path        = $base->tree;
+           $start       = (int) $params->get('startLevel');
+           $end         = (int) $params->get('endLevel');
+           $showAll     = $params->get('showAllChildren');
+           $items       = $menu->getItems('menutype', $params->get('menutype'));
+           $lastitem    = 0;
+           
+           
+           return $items;
+           
+       
+        }
 }
 	 
 

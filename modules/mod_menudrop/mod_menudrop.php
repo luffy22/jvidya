@@ -10,6 +10,10 @@
 	// Include function only once
 	require_once __DIR__ . '/helper.php';
 	
-	$menuActive     = modMenuDropHelper::getActive( $params );
+	$menuActive     = modMenuDropHelper::getActive($params );
+        $menuActiveId   = modMenuDropHelper::getActiveId($params);
         $menuBase       = modMenuDropHelper::getBase($params);
-        require( JModuleHelper::getLayoutPath( 'mod_menudrop' ) );
+        //$menutitle      = modMenuDropHelper::getDefault();
+        //$menuItems      = modMenuDropHelper::getDefault();
+        $list           = modMenuDropHelper::getList($params);
+        require( JModuleHelper::getLayoutPath( 'mod_menudrop' ));
