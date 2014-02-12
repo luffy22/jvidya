@@ -3,7 +3,7 @@ class JConfig {
 	public $offline = '0';
 	public $offline_message = 'This site is down for maintenance.<br /> Please check back again soon.';
 	public $display_offline_message = '1';
-	public $offline_image = '';
+	public $offline_image = 'images/maintenance.jpg';
 	public $sitename = 'JyotishiVidya';
 	public $editor = 'none';
 	public $captcha = '0';

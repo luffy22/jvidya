@@ -23,23 +23,28 @@
     <div class="header-inner">
         <a href="index.php"><img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/jv_logo.png" alt="Jyotishi Vidya" title="Navigate to Home Page" height="150" width="400" /></a>    
     </div>
-    <ul class="nav nav-pills">
-        <li class="dropdown">
-            <jdoc:include type="modules" name="menu" style="none" />
-        </li>
-        <li class="dropdown">
-            <jdoc:include type="modules" name="menu1" style="none" />
-        </li>
-        <li class="dropdown">
-            <jdoc:include type="modules" name="menu2" style="none" />
-        </li>
-        <li class="dropdown">
-            <jdoc:include type="modules" name="menu3" style="none" />
-        </li>
-        <li class="dropdown">
-            <jdoc:include type="modules" name="menu4" style="none" />
-        </li>
-    </ul>
+    <div class="header-menu">
+        <ul class="nav nav-pills">
+            <li>
+                <a href="index.php"><img src="<?php echo $this->baseurl; ?>/images/home_icon.jpg" alt="Jyotishi Vidya" title="Navigate to Home Page" height="30px" width="30px" /></a>
+            </li>
+            <li class="dropdown">
+                <jdoc:include type="modules" name="menu" style="none" />
+            </li>
+            <li class="dropdown">
+                <jdoc:include type="modules" name="menu1" style="none" />
+            </li>
+            <li class="dropdown">
+                <jdoc:include type="modules" name="menu2" style="none" />
+            </li>
+            <li class="dropdown">
+                <jdoc:include type="modules" name="menu3" style="none" />
+            </li>
+            <li class="dropdown">
+                <jdoc:include type="modules" name="menu4" style="none" />
+            </li>
+        </ul>
+    </div>
 </div>
 <!-- Gives some space between header and body-->
 <div class="spacer"></div>
