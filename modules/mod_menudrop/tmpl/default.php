@@ -8,15 +8,14 @@
 ?>
 <html>
     <body>
-        <div class="btn-grp btn-inverse">
-        <a class="btn dropdown-toggle btn-inverse" id="<?php echo "menu_".$menuActiveId; ?>" data-toggle="dropdown" href="#"
+        <a class="dropdown-toggle btn-primary" id="<?php echo "menu_".$menuActiveId; ?>" data-toggle="dropdown" href="#"
            onclick="javascript:toggleMenu(<?php echo "menu_".$menuActiveId; ?>)">
             <?php
-                    echo $menuBase;
+                    echo $menuTitle;
             ?>
             <span class="caret"></span>
         </a>
-        <ul class="dropdown-menu btn-inverse">
+        <ul class="dropdown-menu btn-primary">
         <?php 
             foreach($list as $key=>$value)
             {
@@ -33,7 +32,6 @@
             }
         ?>
         </ul>
-        </div>
     </body>
 </html>
  

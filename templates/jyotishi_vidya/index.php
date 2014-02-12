@@ -18,28 +18,36 @@
 <script type="text/javascript" language="javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/common.js"></script>
 </head>
 <body>
+<!--The main header container -->
 <div class="main-header">
-    <div class="container">
-        <h1><a href="index.php"><img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/jv_logo.png" alt="Jyotishi Vidya" title="Navigate to Home Page" height="150" width="400" /></a></h1>
-        <div class="navbar">
-            <div class="navbar-inner">
-                <ul class="nav">
-                    <li>
-                        <jdoc:include type="modules" name="menu" style="none" />
-                    </li>
-                    <li>
-                        <jdoc:include type="modules" name="menu1" style="none" />
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <div class="header-inner">
+        <a href="index.php"><img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/jv_logo.png" alt="Jyotishi Vidya" title="Navigate to Home Page" height="150" width="400" /></a>    
     </div>
+    <ul class="nav nav-pills">
+        <li class="dropdown">
+            <jdoc:include type="modules" name="menu" style="none" />
+        </li>
+        <li class="dropdown">
+            <jdoc:include type="modules" name="menu1" style="none" />
+        </li>
+        <li class="dropdown">
+            <jdoc:include type="modules" name="menu2" style="none" />
+        </li>
+        <li class="dropdown">
+            <jdoc:include type="modules" name="menu3" style="none" />
+        </li>
+        <li class="dropdown">
+            <jdoc:include type="modules" name="menu4" style="none" />
+        </li>
+    </ul>
 </div>
+<!-- Gives some space between header and body-->
 <div class="spacer"></div>
+<!-- The main body container -->
 <div class="main-section">
     <div class ="container-fluid">
     <div class="span3">
-        
+        <jdoc:include type="modules" name="userlogin" style="none" />
     </div>
     <div class="span6">
         <jdoc:include type="modules" name="breadcrumbs" style="none" />

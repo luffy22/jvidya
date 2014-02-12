@@ -13,7 +13,7 @@
 	$menuActive     = modMenuDropHelper::getActive($params );
         $menuActiveId   = modMenuDropHelper::getActiveId($params);
         $menuBase       = modMenuDropHelper::getBase($params);
-        //$menutitle      = modMenuDropHelper::getDefault();
+        $menuTitle      = modMenuDropHelper::getTitle($params);
         //$menuItems      = modMenuDropHelper::getDefault();
         $list           = modMenuDropHelper::getList($params);
         require( JModuleHelper::getLayoutPath( 'mod_menudrop' ));

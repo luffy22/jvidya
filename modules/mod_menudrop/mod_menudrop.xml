@@ -16,7 +16,13 @@
 		<help key="JHELP_EXTENSIONS_MODULE_MANAGER_MENU" />
 	<config>
 		<fields name="params">
-			<fieldset name="basic">
+                        <fieldset name="basic">
+                                <field
+                                        name="title"
+                                        type="text"
+                                        label= "Title of Menu"
+                                        description= "Select a title for the current Menu"
+                                    />
 				<field
 					name="menutype"
 					type="menu"

@@ -51,6 +51,12 @@ class modMenuDropHelper
            
        
         }
-}
+        public static function getTitle($params)
+        {
+            $title      = (string) $params->get('title');
+            
+            return $title;
+        }
+   }     
 	 
 
