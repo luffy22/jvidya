@@ -21,7 +21,7 @@
             {
                 $url   = JRoute::_($value->link . "&Itemid=" . $value->id); // use JRoute to make link from object
             ?>
-                <li>
+                <li class="dropdown">
                 <a href="<?php echo $url; ?>">
                     <?php
                         echo $value->title;

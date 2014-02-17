@@ -11,7 +11,6 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <jdoc:include type="head" />
-<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/jui/css/bootstrap.css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/jui/css/bootstrap-responsive.css"/>
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
@@ -25,26 +24,28 @@
         <a href="index.php"><img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/jv_logo.png" alt="Jyotishi Vidya" title="Navigate to Home Page" height="150" width="400" /></a>    
     </div>
     <div class="header-menu visible-desktop">
-        <ul class="nav nav-pills visible-desktop">
-            <li class="home_icon">
-                <a href="index.php"><img src="<?php echo $this->baseurl; ?>/images/home_logo.png" alt="Jyotishi Vidya" title="Navigate to Home Page" width="35px" height="35px" /></a>
-            </li>
-            <li class="dropdown">
-                <jdoc:include type="modules" name="menu" style="none" />
-            </li>
-            <li class="dropdown">
-                <jdoc:include type="modules" name="menu1" style="none" />
-            </li>
-            <li class="dropdown">
-                <jdoc:include type="modules" name="menu2" style="none" />
-            </li>
-            <li class="dropdown">
-                <jdoc:include type="modules" name="menu3" style="none" />
-            </li>
-            <li class="dropdown">
-                <jdoc:include type="modules" name="menu4" style="none" />
-            </li>
-        </ul>
+        <div class="home_icon">
+            <a href="index.php"><img src="<?php echo $this->baseurl; ?>/images/home_logo.png" alt="Jyotishi Vidya" title="Navigate to Home Page" width="35px" height="35px" /></a>
+        </div>
+        <div class="navigation_menu">
+            <ul class="nav nav-pills visible-desktop">
+                <li class="dropdown">
+                    <jdoc:include type="modules" name="menu" style="none" />
+                </li>
+                <li class="dropdown">
+                    <jdoc:include type="modules" name="menu1" style="none" />
+                </li>
+                <li class="dropdown">
+                    <jdoc:include type="modules" name="menu2" style="none" />
+                </li>
+                <li class="dropdown">
+                    <jdoc:include type="modules" name="menu3" style="none" />
+                </li>
+                <li class="dropdown">
+                    <jdoc:include type="modules" name="menu4" style="none" />
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
 <!-- Gives some space between header and body-->
@@ -53,14 +54,15 @@
 <div class="main-section">
     <div class ="container-fluid">
     <div class="span3 visible-desktop">
-        <jdoc:include type="modules" name="userlogin" style="none" />
+        <jdoc:include type="modules" name="sidebar" style="none" />
     </div>
     <div class="span6">
         <jdoc:include type="modules" name="breadcrumbs" style="none" />
         <jdoc:include type="component" />
         <jdoc:include type="message" />
+        <jdoc:include type="modules" name="relatedarticles" style="none" />
     </div>
-     <div class="span3 visible-desktop">
+    <div class="span3 visible-desktop">
         <jdoc:include type="modules" name="socialplugins" style="none" />
     </div>
 </div>

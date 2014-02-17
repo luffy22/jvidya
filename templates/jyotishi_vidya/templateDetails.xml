@@ -24,10 +24,11 @@
                 <position>menu3</position>
                 <position>menu4</position>
                 <position>userlogin</position>
-                <position>articlecontent</position>
+                <position>relatedarticles</position>
                 <position>footer</position>
                 <position>socialplugins</position>
                 <position>sidebar</position>
+                <position>sidebarmenu</position>
                 <position>adwords</position>
         </positions>
 </extension>
