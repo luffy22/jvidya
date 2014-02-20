@@ -1,5 +1,5 @@
 <?php 
-    //error_reporting(0);
+    error_reporting(0);
     defined( '_JEXEC' ) or die( 'Restricted access' );
     JHtml::_('bootstrap.framework'); // Loads the bootstrap framework in noConflict Mode
     JHtml::_('jquery.framework');       // Loads the Jquery framework in noConflict Mode
@@ -55,6 +55,7 @@
     <div class ="container-fluid">
     <div class="span3 visible-desktop">
         <jdoc:include type="modules" name="sidebar" style="none" />
+        <jdoc:include type="modules" name="userlogin" style="none" />
     </div>
     <div class="span6">
         <jdoc:include type="modules" name="breadcrumbs" style="none" />

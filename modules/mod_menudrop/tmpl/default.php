@@ -8,8 +8,9 @@
 ?>
 <html>
     <body>
-        <a class="dropdown-toggle btn-primary" id="<?php echo "menu_".$menuActiveId; ?>" data-toggle="dropdown" href="#"
-           onclick="javascript:toggleMenu(<?php echo "menu_".$menuActiveId; ?>)">
+        
+        <a class="dropdown-toggle btn-primary" id="<?php echo "menu_".$menuID; ?>" data-toggle="dropdown" href="#"
+           onclick="javascript:toggleMenu(<?php echo "menu_".$menuID; ?>)">
             <?php
                     echo $menuTitle;
             ?>
@@ -21,7 +22,7 @@
             {
                 $url   = JRoute::_($value->link . "&Itemid=" . $value->id); // use JRoute to make link from object
             ?>
-                <li class="dropdown">
+                <li class="dropdown" id="menu_<?php echo $value->id; ?>">
                 <a href="<?php echo $url; ?>">
                     <?php
                         echo $value->title;

@@ -31,8 +31,8 @@
 				<field
 					name="base"
 					type="menuitem"
-					label="Main Item"
-					description="Current Active Menu Item"
+					label="Base Item"
+					description="Current Base of the Menu"
 					>
 					<option value="">JCURRENT</option>
 				</field>

@@ -10,9 +10,9 @@
 	// Include function only once
 	require_once __DIR__ . '/helper.php';
 	
-	$menuActive     = modMenuDropHelper::getActive($params );
-        $menuActiveId   = modMenuDropHelper::getActiveId($params);
-        $menuBase       = modMenuDropHelper::getBase($params);
+        //$activemenu     = ModMenuHelper::getActive($params);
+	$menuID         = modMenuDropHelper::getActiveId($params);
+        //$menuBase       = modMenuDropHelper::getBase($params);
         $menuTitle      = modMenuDropHelper::getTitle($params);
         //$menuItems      = modMenuDropHelper::getDefault();
         $list           = modMenuDropHelper::getList($params);

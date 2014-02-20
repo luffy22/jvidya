@@ -15,25 +15,33 @@ class modMenuDropHelper
 	 */
 	public static function getBase(&$params)
 	{
-            // Get default menu - JMenu object, look at JMenu api docs
-           $active      = self::getActive($params);
-           $base        = JFactory::getApplication()->getMenu()->getItem($active);
-           return $base;
-        }
+           // Get base menu item from parameters
+		if ($params->get('base'))
+		{
+			$base = JFactory::getApplication()->getMenu()->getItem($params->get('base'));
+		}
+		else
+		{
+			$base = false;
+		}
 
-        public static function getActiveId(&$params)
-        {
-            $active     = JFactory::getApplication()->getMenu()->getActive();
-            $activeid   = $active->id;
-            return $activeid;
+		// Use active menu item if no base found
+		if (!$base)
+		{
+			$base = self::getActive($params);
+		}
+
+		return $base;
         }
-	public static function getActive(&$params)
-	{
-            $active = JFactory::getApplication()->getMenu()->getActive();
-            $title  = $active->title;
-            return $title;
-	}
-      
+        
+        public static function getActiveId($params)
+        {
+            $menu       = JFactory::getApplication()->getMenu()->getActive();
+            $activeid   = $menu->id;
+            
+            return $activeid;            
+        }
+        
         public static function getList($params)
         {
            $menu          = JFactory::getApplication()->getMenu();
