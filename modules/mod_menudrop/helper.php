@@ -13,7 +13,7 @@ class modMenuDropHelper
 	 * Get te list of menu
 	 * @return params The list of the menu
 	 */
-	public static function getBase(&$params)
+	/*public static function getBase(&$params)
 	{
            // Get base menu item from parameters
 		if ($params->get('base'))
@@ -33,13 +33,24 @@ class modMenuDropHelper
 
 		return $base;
         }
-        
+        */
         public static function getActiveId($params)
         {
-            $menu       = JFactory::getApplication()->getMenu()->getActive();
-            $activeid   = $menu->id;
+            $menu          = JFactory::getApplication()->getMenu();
+            $items      = $menu->getItems('menutype', $params->get('menutype'));
             
-            return $activeid;            
+            $current    = $items['0'];       // Gets the base item in array
+            
+            // Database Query
+            /*$db         = JFactory::getDbo();
+            $query      = $db->getQuery(true);
+            $query      = "SELECT * FROM '#_menu' WHERE 'menutype'=".$current;
+            $db         -> setQuery($query);
+            $result     = $db->loadAssoc();
+            
+            $getActiveId    = $result['id'];
+            return gettype($getActiveId);*/
+            return $current->id;
         }
         
         public static function getList($params)
