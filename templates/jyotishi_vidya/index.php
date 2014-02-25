@@ -20,8 +20,13 @@
 <body>
 <!--The main header container -->
 <div class="main-header">
-    <div class="header-inner">
-        <a href="index.php"><img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/jv_logo.png" alt="Jyotishi Vidya" title="Navigate to Home Page" height="150" width="400" /></a>    
+    <div class="header-logo">
+        <div class="header-inner">
+            <a href="index.php"><img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/jv_logo.png" alt="Jyotishi Vidya" title="Navigate to Home Page" height="150" width="400" /></a>    
+        </div>
+        <div class="login-module">
+                <jdoc:include type="modules" name="userlogin" style="none" />
+        </div>
     </div>
     <div class="header-menu visible-desktop">
         <div class="home_icon">
@@ -55,7 +60,6 @@
     <div class ="container-fluid">
     <div class="span3 visible-desktop">
         <jdoc:include type="modules" name="sidebar" style="none" />
-        <jdoc:include type="modules" name="userlogin" style="none" />
     </div>
     <div class="span6">
         <jdoc:include type="modules" name="breadcrumbs" style="none" />

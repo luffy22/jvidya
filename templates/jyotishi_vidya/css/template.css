@@ -43,3 +43,30 @@
     display: inline;
     float: left;
 }
+.login-module
+{
+    display:inline;
+    float: right;
+    margin: 10px 15px 0 0;
+}
+.header-inner
+{
+    display: inline !important;
+}
+.header-logo
+{
+    display: inline;
+}
+#login-link
+{
+    visibility: visible;
+}
+#login-form
+{
+    visibility: hidden;
+    z-index:  1001;
+    margin : 0 15px 0 0;
+    border: 1px solid #000000;
+    padding: 5px;
+    background-color: #006dcc;
+}
