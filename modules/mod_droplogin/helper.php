@@ -18,7 +18,12 @@ defined('_JEXEC') or die;
  */
 class modDropLoginHelper
 {
-    /*public function getReturnURL($params, $type)
+    public static function getCurrentURL($params)
+    {
+        $current = JUri::current();
+        return $current;
+    }
+    public function getReturnURL($params, $type)
     {
         $app	= JFactory::getApplication();
         $router = $app->getRouter();
@@ -83,5 +88,10 @@ class modDropLoginHelper
     {
         $user = JFactory::getUser();
         return (!$user->get('guest')) ? 'logout' : 'login';
-    }*/
+    }
+    public static function getTwoFactorMethods()
+    {
+            require_once JPATH_ADMINISTRATOR . '/components/com_users/helpers/users.php';
+            return UsersHelper::getTwoFactorMethods();
+    }
 }

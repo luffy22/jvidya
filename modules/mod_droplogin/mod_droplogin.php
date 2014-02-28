@@ -12,16 +12,19 @@ defined('_JEXEC') or die('Restricted Access');
 // Include the login functions only once
 require_once __DIR__ . '/helper.php';
 
-//$params->def('greeting', 1);
+$params->def('greeting', 1);
 
-//$type//	          = ModLoginHelper::getType();
-//$return	          = ModLoginHelper::getReturnURL($params, $type);
-//$user	          = JFactory::getUser();
+$type               = modDropLoginHelper::getType();
+$current            = modDropLoginHelper::getCurrentURL();
+$return             = modDropLoginHelper::getReturnURL($params, $type);
+$twofactormethods   = modDropLoginHelper::getTwoFactorMethods();
+$user               = JFactory::getUser();
+$layout             = $params->get('layout', 'default');
 
-// Logged users must load the logout sublayout
-/*if (!$user->guest)
+//Logged users must load the logout sublayout
+if (!$user->guest)
 {
 	$layout .= '_logout';
-}*/
+}
 
 require(JModuleHelper::getLayoutPath('mod_droplogin'));

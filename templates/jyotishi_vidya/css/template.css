@@ -61,12 +61,22 @@
 {
     visibility: visible;
 }
-#login-form
+#login-form2
 {
+    position: absolute;
+    top: 5px;
+    right: 0;
     visibility: hidden;
-    z-index:  1001;
+    z-index:  10001;
     margin : 0 15px 0 0;
     border: 1px solid #000000;
     padding: 5px;
-    background-color: #006dcc;
+    background-color: #BABABA;
+}
+
+#uid1, #uid2
+{
+    font-size: 11px;
+    color: #FF0000;
+    visibility: hidden;
 }

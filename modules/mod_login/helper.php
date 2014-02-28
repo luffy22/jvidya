@@ -18,6 +18,7 @@ defined('_JEXEC') or die;
  */
 class ModLoginHelper
 {
+        
 	public static function getReturnURL($params, $type)
 	{
 		$app	= JFactory::getApplication();

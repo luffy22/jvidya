@@ -25,7 +25,7 @@
             <a href="index.php"><img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/jv_logo.png" alt="Jyotishi Vidya" title="Navigate to Home Page" height="150" width="400" /></a>    
         </div>
         <div class="login-module">
-                <jdoc:include type="modules" name="userlogin" style="none" />
+            <jdoc:include type="modules" name="userlogin" style="none" />
         </div>
     </div>
     <div class="header-menu visible-desktop">
