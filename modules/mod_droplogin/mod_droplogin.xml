@@ -68,21 +68,21 @@
 					type="radio"
 					class="btn-group btn-group-yesno"
 					default="0"
-					label="Use Secure Layer"
-					description="Use https login for security">
-					<option value="1">JYES</option>
-					<option value="0">JNO</option>
+					label="Secure Connection"
+					description="Secure Socket Layer Connection">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
 				</field>
 				<field
 					name="usetext"
 					type="list"
 					default="0"
 					label="Icons/Text"
-					description="Login can show icon or text">
+					description="Whether to use icons or text">
 					<option
-						value="0">Use Icons</option>
+						value="0">Icons</option>
 					<option
-						value="1">Use Text</option>
+						value="1">Text</option>
 				</field>
 			</fieldset>
 		</fields>

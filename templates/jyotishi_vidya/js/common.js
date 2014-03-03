@@ -14,19 +14,28 @@ function toggleMenu(id)
 function showLogin()
 {
    jQuery('#login-link').css('visibility','hidden');
-   jQuery('#login-form2').css('visibility', 'visible');
+   jQuery('#login-form').css('visibility', 'visible');
    
-   jQuery('#login-form2').modal('toggle');
+   jQuery('#login-form').modal('toggle');
 }
 // Simple function to hide the login box
 function hideLogin()
 {
    jQuery('#login-link').css('visibility','visible');
-   jQuery('#login-form2').css('visibility', 'hidden');
+   jQuery('#login-form').css('visibility', 'hidden');
+   /*jQuery('#uid1').css('visibility', 'hidden');
+   jQuery('#uid2').css('visibility', 'hidden');
+   jQuery("#modlgn-uname").css('background', '#FFFFFF');
+   jQuery("#modlgn-passwd").css('background', '#FFFFFF');*/
 }
 
+function hideLoginField()
+{
+    jQuery('#login-link').css('visibility','hidden');
+    jQuery('.login-module').css('visibility','visible');
+}
 // The below function validates the login form
-function validateLoginForm()
+/*function validateLoginForm()
 {
     var uname   = document.getElementById("modlgn-uname");
     var upass    = document.getElementById("modlgn-passwd");    
@@ -53,6 +62,7 @@ function validateLoginForm()
     }
     else
     {
-        alert("Done...");
+        form.submit();
+        return true;
     }
-}
+}*/

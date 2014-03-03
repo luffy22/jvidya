@@ -61,7 +61,7 @@
 {
     visibility: visible;
 }
-#login-form2
+#login-form
 {
     position: absolute;
     top: 5px;
@@ -79,4 +79,14 @@
     font-size: 11px;
     color: #FF0000;
     visibility: hidden;
+}
+#lgn-remember
+{
+    display: inline;
+    float: left;
+}
+#modlgn-remember
+{
+    display: inline;
+    margin-left: 10px;
 }
