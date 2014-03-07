@@ -91,7 +91,7 @@ JHtml::_('bootstrap.tooltip');
 		<div id="form-login-submit" class="control-group">
                     <div class="controls">
                         <button type="submit" tabindex="0" name="Submit" class="btn btn-primary">Login</button>
-                        <button class="cancel" tabindex="4" name="Cancel" class="btn btn-danger" onclick="javascript:hideLogin();">Cancel</button>
+                        <button type="reset" class="cancel" tabindex="4" name="Cancel" class="btn btn-danger" onclick="javascript:hideLogin();">Cancel</button>
                     </div>
 		</div>
 		<?php
