@@ -12,3 +12,4 @@
 2014-03-03T10:26:01+00:00	INFO	gmailfailure	Failed to authenticate: User is blacklisted
 2014-03-03T10:26:30+00:00	INFO	gmailfailure	Failed to authenticate: User is blacklisted
 2014-03-03T10:27:08+00:00	INFO	gmailfailure	Failed to authenticate: User is blacklisted
+2014-03-04T05:34:57+00:00	INFO	gmailfailure	Failed to authenticate: Access Denied

@@ -17,12 +17,14 @@ function showLogin()
    jQuery('#login-form').css('visibility', 'visible');
    
    jQuery('#login-form').modal('toggle');
+   return false;
 }
 // Simple function to hide the login box
 function hideLogin()
 {
    jQuery('#login-link').css('visibility','visible');
    jQuery('#login-form').css('visibility', 'hidden');
+   return false;
    /*jQuery('#uid1').css('visibility', 'hidden');
    jQuery('#uid2').css('visibility', 'hidden');
    jQuery("#modlgn-uname").css('background', '#FFFFFF');
@@ -32,7 +34,20 @@ function hideLogin()
 function hideLoginField()
 {
     jQuery('#login-link').css('visibility','hidden');
-    jQuery('.login-module').css('visibility','visible');
+    jQuery('.login-form').css('visibility','visible');
+    return false;
+}
+
+function showSideMenu()
+{
+    jQuery('#sidemenu_left').removeClass('visible-desktop');
+    jQuery('#sidemenu_left').toggle();
+    jQuery('#sidemenu_left').css('position', 'absolute');
+    jQuery('#sidemenu_left').css('zindex', '10010')
+    jQuery('#sidemenu_left').css('width', '180px');
+    jQuery('#sidemenu_left').css('height','100%');
+    jQuery('#sidemenu_left').css('left', '0' );
+    jQuery('#sidemenu_left').css('top', '200px');
 }
 // The below function validates the login form
 /*function validateLoginForm()

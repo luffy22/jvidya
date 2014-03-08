@@ -58,10 +58,11 @@
 <!-- The main body container -->
 <div class="main-section">
     <div class ="container-fluid">
-    <div class="span3 visible-desktop">
+    <div class="span3 visible-desktop" id="sidemenu_left">
         <jdoc:include type="modules" name="sidebar" style="none" />
     </div>
     <div class="span6">
+        <div class ="hidden-desktop"><a href="#" onclick="javascript:showSideMenu()"><img src="<?php echo $this->baseurl; ?>/images/menu.png" alt="Show Menu" title="Show Menu" height="20px" width="20px" /></a></div>
         <jdoc:include type="modules" name="breadcrumbs" style="none" />
         <jdoc:include type="component" />
         <jdoc:include type="message" />
