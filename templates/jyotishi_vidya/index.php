@@ -69,7 +69,13 @@
         <jdoc:include type="modules" name="relatedarticles" style="none" />
     </div>
     <div class="span3 visible-desktop">
-        <jdoc:include type="modules" name="socialplugins" style="none" />
+        <div class="plugin">
+            <jdoc:include type="modules" name="fblikeplugin" style="none" />
+        </div>
+        <div class="spacer"></div>
+        <div class="plugin">
+            <jdoc:include type="modules" name="socialplugins" style="none" />
+        </div>
     </div>
 </div>
 </div>

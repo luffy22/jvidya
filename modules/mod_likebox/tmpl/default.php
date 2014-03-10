@@ -4,5 +4,5 @@ defined( '_JEXEC' ) or die( 'Restricted access' ); ?>
 
 <?php 
 
-        echo $socialfollow;
+        echo $likebox;
 ?>
