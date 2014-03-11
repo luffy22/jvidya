@@ -62,6 +62,7 @@
         <jdoc:include type="modules" name="sidebar" style="none" />
     </div>
     <div class="span6">
+        <jdoc:include type="modules" name="searchbox" style="none" />
         <div class ="hidden-desktop"><a href="#" onclick="javascript:showSideMenu()"><img src="<?php echo $this->baseurl; ?>/images/menu.png" alt="Show Menu" title="Show Menu" height="20px" width="20px" /></a></div>
         <jdoc:include type="modules" name="breadcrumbs" style="none" />
         <jdoc:include type="component" />
@@ -76,6 +77,7 @@
         <div class="plugin">
             <jdoc:include type="modules" name="socialplugins" style="none" />
         </div>
+        
     </div>
 </div>
 </div>

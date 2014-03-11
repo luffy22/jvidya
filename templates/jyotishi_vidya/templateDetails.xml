@@ -29,7 +29,8 @@
                 <position>socialplugins</position>
                 <position>fblikeplugin</position>
                 <position>sidebar</position>
-                <position>sidebarmenu</position>
+                <position>searchbox</position>
+                <position>relatedarticles</position>
                 <position>adwords</position>
         </positions>
 </extension>
