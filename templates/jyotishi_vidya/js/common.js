@@ -47,7 +47,7 @@ function showSideMenu()
     jQuery('#sidemenu_left').css('width', '180px');
     jQuery('#sidemenu_left').css('height','100%');
     jQuery('#sidemenu_left').css('left', '0' );
-    jQuery('#sidemenu_left').css('top', '200px');
+    jQuery('#sidemenu_left').css('top', '300px');
 }
 // The below function validates the login form
 /*function validateLoginForm()
