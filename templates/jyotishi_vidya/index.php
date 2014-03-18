@@ -16,6 +16,18 @@
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/style.css" type="text/css" />
 <script type="text/javascript" language="javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/common.js"></script>
+<script>
+    (function() {
+    var cx = '006812877761787834600:kranbsbb5p8';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+    })();
+</script>
 </head>
 <body>
 <!--The main header container -->
@@ -62,7 +74,7 @@
         <jdoc:include type="modules" name="sidebar" style="none" />
     </div>
     <div class="span6">
-        <jdoc:include type="modules" name="searchbox" style="none" />
+        <gcse:search></gcse:search>
     </div>
     <div class="spacermini"></div>
     <div class="span6">
