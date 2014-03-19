@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/style.css" type="text/css" />
 <script type="text/javascript" language="javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/common.js"></script>
 <script>
-    (function() {
+  (function() {
     var cx = '006812877761787834600:kranbsbb5p8';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
@@ -26,7 +26,7 @@
         '//www.google.com/cse/cse.js?cx=' + cx;
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(gcse, s);
-    })();
+  })();
 </script>
 </head>
 <body>
