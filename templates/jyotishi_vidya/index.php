@@ -3,7 +3,6 @@
     defined( '_JEXEC' ) or die( 'Restricted access' );
     JHtml::_('bootstrap.framework'); // Loads the bootstrap framework in noConflict Mode
     JHtml::_('jquery.framework');       // Loads the Jquery framework in noConflict Mode
-
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
@@ -74,6 +73,7 @@
         <jdoc:include type="modules" name="sidebar" style="none" />
     </div>
     <div class="span6">
+	<!--Google Search Engine Code  -->
         <gcse:search></gcse:search>
     </div>
     <div class="spacermini"></div>
