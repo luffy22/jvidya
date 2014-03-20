@@ -1,8 +1,8 @@
 <?php 
     error_reporting(0);
     defined( '_JEXEC' ) or die( 'Restricted access' );
-    JHtml::_('bootstrap.framework'); // Loads the bootstrap framework in noConflict Mode
     JHtml::_('jquery.framework');       // Loads the Jquery framework in noConflict Mode
+    JHtml::_('bootstrap.framework'); // Loads the bootstrap framework in noConflict Mode
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
