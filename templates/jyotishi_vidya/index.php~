@@ -1,8 +1,8 @@
 <?php 
     error_reporting(0);
     defined( '_JEXEC' ) or die( 'Restricted access' );
-    JHtml::_('jquery.framework');       // Loads the Jquery framework in noConflict Mode
     JHtml::_('bootstrap.framework'); // Loads the bootstrap framework in noConflict Mode
+    JHtml::_('jquery.framework');       // Loads the Jquery framework in noConflict Mode
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
@@ -73,7 +73,7 @@
         <jdoc:include type="modules" name="sidebar" style="none" />
     </div>
     <div class="span6">
-	<!--Google Search Engine Code  -->
+	<!--Google Search Code  -->
         <gcse:search></gcse:search>
     </div>
     <div class="spacermini"></div>
@@ -104,11 +104,11 @@
 </div>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=220390744824296";
-  fjs.parentNode.insertBefore(js, fjs);
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <!-- Place this tag after the last widget tag. -->
 <script type="text/javascript">
