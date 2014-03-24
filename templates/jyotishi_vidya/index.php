@@ -27,8 +27,25 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=220390744824296";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Place this tag after the last widget tag. -->
+<script type="text/javascript">
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/platform.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </head>
 <body>
+<div id="fb-root"></div>
 <!--The main header container -->
 <div class="main-header">
     <div class="header-logo">
@@ -78,8 +95,15 @@
     </div>
     <div class="spacermini"></div>
     <div class="span6">
-        <div class ="hidden-desktop"><a href="#" onclick="javascript:showSideMenu()"><img src="<?php echo $this->baseurl; ?>/images/menu.png" alt="Show Menu" title="Show Menu" height="20px" width="20px" /></a></div>
+        <div class ="hidden-desktop"><a href="#" id="left_menu" text="Tap Twice for menu"><img src="<?php echo $this->baseurl; ?>/images/menu.png" alt="Show Menu" title="Show Menu" height="20px" width="20px" /></a></div>
         <jdoc:include type="modules" name="breadcrumbs" style="none" />
+        <div class="main-content" id="main-content">
+            <jdoc:include type="modules" name="articleslider" style="none" />
+        </div>
+        <div class="mini-spacer"></div>
+        <div class="main-content" id="main-content2">
+            <jdoc:include type="modules" name="articleslider2" style="none" />
+        </div>
         <jdoc:include type="component" />
         <jdoc:include type="message" />
         <jdoc:include type="modules" name="relatedarticles" style="none" />
@@ -102,22 +126,5 @@
         <jdoc:include type="modules" name="footer" />
     </div>
 </div>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=220390744824296";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!-- Place this tag after the last widget tag. -->
-<script type="text/javascript">
-(function() {
-var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-po.src = 'https://apis.google.com/js/platform.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-})();
-</script>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </body>
 </html>

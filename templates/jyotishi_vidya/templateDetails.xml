@@ -32,5 +32,7 @@
                 <position>searchbox</position>
                 <position>relatedarticles</position>
                 <position>adwords</position>
+                <position>articleslider</position>
+                <position>articleslider2</position>
         </positions>
 </extension>

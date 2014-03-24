@@ -38,17 +38,20 @@ function hideLoginField()
     return false;
 }
 
-function showSideMenu()
+
+jQuery('#left_menu').click(function()
 {
     jQuery('#sidemenu_left').removeClass('visible-desktop');
     jQuery('#sidemenu_left').toggle();
+    jQuery('#main-content').hide();
     jQuery('#sidemenu_left').css('position', 'absolute');
     jQuery('#sidemenu_left').css('zindex', '10010')
     jQuery('#sidemenu_left').css('width', '180px');
     jQuery('#sidemenu_left').css('height','100%');
     jQuery('#sidemenu_left').css('left', '0' );
     jQuery('#sidemenu_left').css('top', '300px');
-}
+})
+
 // The below function validates the login form
 /*function validateLoginForm()
 {
