@@ -13,7 +13,7 @@
 	font-size: inherit;
 	color: #666;
 	padding: 10px;
-	background: #f0f0f0;
+	background: #ffffff;
 	border-radius: 4px;
 	box-shadow: inset 0px 0px 10px #eee;
 	margin: 0 0 10px 0;
@@ -21,8 +21,8 @@
 	line-height: normal;
 }
 .minifrontpage-default .mfp-table-cell:hover p {
-        color     : #F0F09E;
-	background: #942E8D;
+        color     : inherit;
+	background: #f0f0f0;
 	box-shadow: none;
 }
 .minifrontpage-default .mfp-date-author {
@@ -43,7 +43,7 @@
 	border-radius: 4px;
 }
 .minifrontpage-default a.mfp-readon:hover {
-	background: #000!important;
+	background: #005580!important;
 }
 .minifrontpage-default .mfp-introtitle {
 	/* display: inline-block; */

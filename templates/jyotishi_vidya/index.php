@@ -83,6 +83,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 </div>
 <!-- Gives some space between header and body-->
 <div class="spacer"></div>
+<div class="webbanner"><jdoc:include type="modules" name="jbanner" style="none" /></div>
 <!-- The main body container -->
 <div class="main-section">
     <div class ="container-fluid">

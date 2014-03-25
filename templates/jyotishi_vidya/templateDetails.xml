@@ -18,6 +18,7 @@
         </files>
         <positions>
                 <position>breadcrumbs</position>
+                <position>jbanner</position>
                 <position>menu</position>
                 <position>menu1</position>
                 <position>menu2</position>
