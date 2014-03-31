@@ -14,5 +14,7 @@ $baseurl = JUri::base();
 ?>
 <div class="bannergroup">
     <?php foreach($list as $item) :?>
+    
+    <?php endforeach; ?>
 </div>
 
