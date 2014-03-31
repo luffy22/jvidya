@@ -84,3 +84,9 @@ jQuery('#left_menu').click(function()
         return true;
     }
 }*/
+
+function slideBanner(url)
+{
+    var folderpath = url;
+    jQuery('');
+}
