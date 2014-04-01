@@ -20,21 +20,6 @@
 		<field name="params">
 			<fieldset name="basic"
 				addfieldpath="/administrator/components/com_banners/models/fields">
-				<field name="target" type="list" default="1" label="Open Banner in"
-				 description="Opens the link in specified window">
-				 <option value="0">Parent Window</option>
-				 <option value="1">New Window</option>
-				 <option value="2">Popup Window</option>
-				 </field>
-				 
-				 <field name="count"
-						type="integer"
-						first="1"
-						last="25"
-						step="1"
-						default="1"
-						label="Number of Banners"
-						description="Number of Banners to Display" />
 				<field
 					name="cid"
 					type="bannerclient"
