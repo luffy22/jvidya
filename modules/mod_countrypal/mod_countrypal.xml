@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type 	= "module" version = "1.0"
+ client	= "site" method	= "upgrade">
+	<name>Countrypal</name>
+	<author>Mugiwara Luffy</author>
+	<creationDate>April 2014</creationDate>
+	<licence>GNU General Public Licence Version 2</licence>
+	<authorEmail>kopnite@gmail.com</authorEmail>	
+	<authorUrl>www.jyotishividya.co.in</authorUrl>
+	<version>1.0</version>
+	<description>Paypal Donate Button based on Countries</description>
+	<files>
+		<filename module="mod_countrypal">mod_countrypal.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_countrypal.xml</filename>
+	</files	>
+</extension>

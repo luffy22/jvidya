@@ -1,0 +1,41 @@
+/*------------------------------------------------------------------------
+# mod_bannerslider - WWM Banner Slideshow
+# ------------------------------------------------------------------------
+# author    walkswithme.net
+# copyright Copyright (C) 2013 walkswithme.net. All Rights Reserved.
+# @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+# Websites: http://www.walkswithme.net/
+# Technical Support:  Forum - http://www.walkswithme.net/joomla-banner-slideshow-module
+-------------------------------------------------------------------------*/
+.bannergroup .banner_controls {
+    bottom: 15px;
+    position: absolute;
+    text-align: center;
+    width: auto;
+    z-index: 9;
+}
+.banner_controls a {
+    background-image: url("../images/banner_controls.png");
+    background-repeat: no-repeat;
+}
+
+
+.banner_controls a {
+    background-position: left top;
+    display: inline-block;
+    height: 8px;
+    margin: 0 6px;
+    text-indent: -9999px;
+    width: 8px;
+}
+.banner_controls a:hover {
+    background-position: left bottom;
+}
+.banner_controls a{
+	color: #777777;
+    outline: 0 none;
+    text-decoration: none;
+}
+.banner_controls a.activeSlide{
+	 background-position: left bottom;
+}
