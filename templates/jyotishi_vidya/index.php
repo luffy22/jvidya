@@ -10,11 +10,12 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <jdoc:include type="head" />
-<link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/jui/css/bootstrap.css" />
-<link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/jui/css/bootstrap-responsive.css"/>
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/jui/css/bootstrap.min.css" />
+<link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/jui/css/bootstrap-responsive.min.css"/>
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/style.css" type="text/css" />
-<script type="text/javascript" language="javascript" src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/common.js"></script>
+<script async src="<?php echo $this->baseurl?>/media/jui/js/jquery-migrate.js"></script>
+<script async src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/common.js" type="text/javascript" language="javascript"></script>
 <script>
   (function() {
     var cx = '006812877761787834600:kranbsbb5p8';
@@ -31,6 +32,7 @@
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
+  js.async = true;
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=220390744824296";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
@@ -39,6 +41,7 @@
 (function() {
 var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
 po.src = 'https://apis.google.com/js/platform.js';
+po.async = true;
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 })();
 </script>
@@ -117,6 +120,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
         <div class="plugin">
             <jdoc:include type="modules" name="socialplugins" style="none" />
         </div>
+        <div class="spacer"></div>
         
     </div>
 </div>

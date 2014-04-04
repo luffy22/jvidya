@@ -13,3 +13,9 @@
 2014-03-03T10:26:30+00:00	INFO	gmailfailure	Failed to authenticate: User is blacklisted
 2014-03-03T10:27:08+00:00	INFO	gmailfailure	Failed to authenticate: User is blacklisted
 2014-03-04T05:34:57+00:00	INFO	gmailfailure	Failed to authenticate: Access Denied
+2014-04-02T11:21:57+00:00	INFO	joomlafailure	Username and password do not match or you do not have an account yet.
+2014-04-02T11:22:22+00:00	INFO	joomlafailure	Username and password do not match or you do not have an account yet.
+2014-04-02T11:22:47+00:00	INFO	joomlafailure	Username and password do not match or you do not have an account yet.
+2014-04-02T11:23:10+00:00	INFO	joomlafailure	Username and password do not match or you do not have an account yet.
+2014-04-02T11:36:02+00:00	INFO	joomlafailure	Username and password do not match or you do not have an account yet.
+2014-04-02T11:36:16+00:00	INFO	joomlafailure	Username and password do not match or you do not have an account yet.
