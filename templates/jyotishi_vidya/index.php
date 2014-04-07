@@ -1,5 +1,5 @@
 <?php 
-    error_reporting(0);
+    //error_reporting(0);
     defined( '_JEXEC' ) or die( 'Restricted access' );
     //JHtml::_('jquery.framework');       // Loads the Jquery framework in noConflict Mode
     //JHtml::_('bootstrap.framework'); // Loads the bootstrap framework in noConflict Mode
