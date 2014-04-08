@@ -31,6 +31,6 @@ Disallow: /templates/
 Disallow: /tmp/
 
 Allow: /
-Allow: /sitemap.html
+Allow: /sitemap.htm
 Sitemap: http://www.astroisha.com/sitemap.xml
 
