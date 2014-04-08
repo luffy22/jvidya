@@ -1,5 +1,5 @@
 <?php 
-    //error_reporting(0);
+    error_reporting(0);
     defined( '_JEXEC' ) or die( 'Restricted access' );
     //JHtml::_('jquery.framework');       // Loads the Jquery framework in noConflict Mode
     //JHtml::_('bootstrap.framework'); // Loads the bootstrap framework in noConflict Mode
@@ -9,6 +9,7 @@
    xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msvalidate.01" content="E689BB58897C0A89BDC88E5DF8800B2F" />
 <jdoc:include type="head" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/jui/css/bootstrap.min.css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/jui/css/bootstrap-responsive.min.css"/>
@@ -48,6 +49,16 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 })();
 </script>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49809214-1', 'astroisha.com');
+  ga('send', 'pageview');
+
+</script>
 </head>
 <body>
 <div id="fb-root"></div>
