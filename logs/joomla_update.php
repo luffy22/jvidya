@@ -18,3 +18,14 @@
 2014-03-07T04:38:50+00:00	INFO	update	Deleting removed files and folders.
 2014-03-07T04:39:00+00:00	INFO	update	Cleaning up after installation.
 2014-03-07T04:39:00+00:00	INFO	update	Update to version 3.2.3 is complete.
+2014-05-01T07:44:38+00:00	INFO	update	Update started by user zoro123 (899). Old version is 3.2.3.
+2014-05-01T07:44:39+00:00	INFO	update	Downloading update file from .
+2014-05-01T07:48:52+00:00	INFO	update	File Joomla_3.3.0-Stable-Update_Package.zip successfully downloaded.
+2014-05-01T07:48:52+00:00	INFO	update	Starting installation of new version.
+2014-05-01T07:49:24+00:00	INFO	update	Starting installation of new version.
+2014-05-01T07:49:27+00:00	INFO	update	Finalising installation.
+2014-05-01T07:49:27+00:00	INFO	update	Ran query from file 3.3.0-2014-02-16. Query text: ALTER TABLE `#__users` ADD COLUMN `requireReset` tinyint(4) NOT NULL DEFAULT 0 C.
+2014-05-01T07:49:27+00:00	INFO	update	Ran query from file 3.3.0-2014-04-02. Query text: INSERT INTO `#__extensions` (`extension_id`, `name`, `type`, `element`, `folder`.
+2014-05-01T07:49:28+00:00	INFO	update	Deleting removed files and folders.
+2014-05-01T07:49:31+00:00	INFO	update	Cleaning up after installation.
+2014-05-01T07:49:31+00:00	INFO	update	Update to version 3.3.0 is complete.

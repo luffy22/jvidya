@@ -39,10 +39,9 @@ function hideLoginField()
 }
 
 
-jQuery('#left_menu').on('tap', function()
+jQuery('#mob_menu').on('click', function()
 {
-    alert("works");
-    /*jQuery('#sidemenu_left').removeClass('visible-desktop');
+    jQuery('#sidemenu_left').removeClass('visible-desktop');
     jQuery('#sidemenu_left').toggle();
     jQuery('#main-content').hide();
     jQuery('#sidemenu_left').css('position', 'absolute');
@@ -50,7 +49,7 @@ jQuery('#left_menu').on('tap', function()
     jQuery('#sidemenu_left').css('width', '180px');
     jQuery('#sidemenu_left').css('height','100%');
     jQuery('#sidemenu_left').css('left', '0' );
-    jQuery('#sidemenu_left').css('top', '350px');*/
+    jQuery('#sidemenu_left').css('top', '350px');
 })
 
 // The below function validates the login form
