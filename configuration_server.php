@@ -13,9 +13,9 @@ class JConfig {
 	public $debug_lang = '0';
 	public $dbtype = 'mysqli';
 	public $host = 'localhost';
-	public $user = 'jyotish1_admin';
-	public $password = 'hbSkLWZn}UVt';
-	public $db = 'jyotish1_vidya1';
+	public $user = 'astroxou_admin';
+	public $password = '8Vd6JWv0,[T}';
+	public $db = 'astroxou_jvidya';
 	public $dbprefix = 'jv_';
 	public $live_site = '';
 	public $secret = 'o9TGynnHQQTK56DS';
@@ -31,8 +31,8 @@ class JConfig {
 	public $offset = 'UTC';
 	public $mailonline = '1';
 	public $mailer = 'mail';
-	public $mailfrom = 'admin@jyotishividya.co.in';
-	public $fromname = 'AstroIsha';
+	public $mailfrom = 'admin@astroisha.com';
+	public $fromname = 'Astro Isha';
 	public $sendmail = '/usr/sbin/sendmail';
 	public $smtpauth = '0';
 	public $smtpuser = '';
@@ -54,8 +54,8 @@ class JConfig {
 	public $sef_suffix = '1';
 	public $unicodeslugs = '0';
 	public $feed_limit = '10';
-	public $log_path = '/home/jyotish1/public_html/logs';
-	public $tmp_path = '/home/jyotish1/public_html/tmp';
+	public $log_path = '/home/astroxou/public_html/logs';
+	public $tmp_path = '/home/astroxou/public_html/tmp';
 	public $lifetime = '15';
 	public $session_handler = 'database';
 	public $MetaRights = '';
