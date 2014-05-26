@@ -1,5 +1,16 @@
 <?php
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
-?>
-<h3><span style="color:#FF0000"><?php echo $this->msg; ?></span></h3>
+
+$cookieLogin = $this->user->get('cookieLogin');
+
+if($this->user->get('guest')|| (!empty($cookieLogin)))
+{
+    // The user is logged in or needs a password
+    echo $this->loadTemplate('login');
+}
+else
+{
+    // load the logout template
+    echo $this->loadTemplate('logout');
+}

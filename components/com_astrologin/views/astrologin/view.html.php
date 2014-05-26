@@ -10,13 +10,16 @@ jimport('joomla.application.component.view');
  */
 class AstroLoginViewAstroLogin extends JViewLegacy
 {
-        // Overwriting JView display method
-        function display($tpl = null) 
-        {
-                // Assign data to the view
-                $this->msg = 'Astro Login';
- 
-                // Display the view
-                parent::display($tpl);
-        }
+    protected $user;
+    // Overwriting JView display method
+    function display($tpl = null) 
+    {
+        // Get the view data.
+        $this->user		= JFactory::getUser();
+        // Assign data to the view
+        $this->msg = 'Astro Login';
+
+        // Display the view
+        parent::display($tpl);
+    }
 }

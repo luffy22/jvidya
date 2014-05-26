@@ -39,7 +39,7 @@ function hideLoginField()
 }
 
 
-jQuery('#mob_menu').on('click', function()
+function showSideMenu()
 {
     jQuery('#sidemenu_left').removeClass('visible-desktop');
     jQuery('#sidemenu_left').toggle();
@@ -50,8 +50,21 @@ jQuery('#mob_menu').on('click', function()
     jQuery('#sidemenu_left').css('height','100%');
     jQuery('#sidemenu_left').css('left', '0' );
     jQuery('#sidemenu_left').css('top', '350px');
-})
-
+}
+function validateLogin()
+{
+    var uname = document.getElementById("al_uname").value;
+    var passwd = document.getElementById("al_passwd").value;
+    var dirname = '/jvidya/components/com_astrologin/controllers/process.php';
+    var data    = "data";
+    jQuery.ajax({
+        type: "POST",
+        url : dirname,
+        data: "uname="+uname+"&passwd="+passwd+"data="+data,
+        dataType: 'text',
+        
+    }).done(function(data){alert(data)}).fail(function(){alert("fail")});
+}
 // The below function validates the login form
 /*function validateLoginForm()
 {

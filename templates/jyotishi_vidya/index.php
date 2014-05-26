@@ -66,7 +66,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 <div class="main-header">
     <div class="header-logo">
         <div class="header-inner">
-            <a href="index.php"><img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/jv_logo.png" alt="Jyotishi Vidya" title="Navigate to Home Page" height="150" width="400" /></a>    
+            <a href="index.php"><img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/jv_logo.png" alt="Astro Isha" title="Navigate to Home Page" height="150" width="400" /></a>    
         </div>
         <div class="login-module">
             <jdoc:include type="modules" name="userlogin" style="none" />
@@ -112,7 +112,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
     </div>
     <div class="spacermini"></div>
     <div class="span6">
-        <div class ="hidden-desktop"><a href="#" id="left_menu" text="Tap Twice for menu"><img src="<?php echo $this->baseurl; ?>/images/menu.png" alt="Show Menu" title="Show Menu" height="20px" width="20px" id="mob_menu"/></a></div>
         <jdoc:include type="modules" name="breadcrumbs" style="none" />
         <div class="main-content" id="main-content">
             <jdoc:include type="modules" name="articleslider" style="none" />

@@ -10,4 +10,18 @@ jimport('joomla.application.component.controller');
  */
 class AstroLoginController extends JControllerLegacy
 {
+    public function validateLogin()
+    {
+        if(isset($_POST['data']))
+        {
+            $uname  = $_POST['uname'];
+            $passwd = $_POST['passwd'];
+            
+            echo $uname;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

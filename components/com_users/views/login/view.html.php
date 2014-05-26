@@ -37,8 +37,8 @@ class UsersViewLogin extends JViewLegacy
 		// Get the view data.
 		$this->user		= JFactory::getUser();
 		$this->form		= $this->get('Form');
-		$this->state	= $this->get('State');
-		$this->params	= $this->state->get('params');
+		$this->state            = $this->get('State');
+		$this->params           = $this->state->get('params');
 
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
