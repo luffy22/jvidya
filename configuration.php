@@ -31,8 +31,8 @@ class JConfig {
 	public $offset = 'UTC';
 	public $mailonline = '1';
 	public $mailer = 'mail';
-	public $mailfrom = 'admin@jyotishividya.co.in';
-	public $fromname = 'JyotishiVidya';
+	public $mailfrom = 'admin@astroisha.com';
+	public $fromname = 'Astro Isha';
 	public $sendmail = '/usr/sbin/sendmail';
 	public $smtpauth = '0';
 	public $smtpuser = '';
@@ -44,7 +44,7 @@ class JConfig {
 	public $cache_handler = 'file';
 	public $cachetime = '15';
 	public $MetaDesc = 'Comprehensive Guide to Vedic Astrology';
-	public $MetaKeys = 'vedic astrology, astrology, 27 nakshatras, 9 grahas, shani, mangal, 12 bhavas, 12 rashis';
+	public $MetaKeys = 'vedic astrology, astrology, 27 nakshatras, 9 grahas, shani, mangal, 12 bhavas, 12 rashis,';
 	public $MetaTitle = '1';
 	public $MetaAuthor = '0';
 	public $MetaVersion = '0';
