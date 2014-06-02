@@ -30,7 +30,17 @@ function checkLoginState()
     // Full docs on the response object can be found in the documentation
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
-      window.location.href = "http://localhost/jvidya/index.php"
+      var uid = response.authResponse.userID;
+    var accessToken = response.authResponse.accessToken;
+    var dirname = '/jvidya/components/com_astrologin/controllers/process.php';
+    var data    = "fblogin";
+    jQuery.ajax({
+        type: "POST",
+        url : dirname,
+        data: "uid="+uid+"&accesstoken="+accessToken+"&fblogin="+data,
+        dataType: 'text',
+        
+    }).done(function(data){alert(data)}).fail(function(){alert("fail")});
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log ' +
@@ -47,7 +57,7 @@ function checkLoginState()
 <body>
 <div class="social-group">
     <div class="fb-label">
-        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        <fb:login-button scope="public_profile,email" data-size="large" onlogin="checkLoginState();">
         </fb:login-button>
 
         <div id="status">
@@ -79,5 +89,6 @@ function checkLoginState()
         </div>
     </fieldset>
 </form>
+    <div class="focus"><a href="index.php?option=com_astrologin&view=astroregister">Register With Us</a></div>
 </body>
 </html>
