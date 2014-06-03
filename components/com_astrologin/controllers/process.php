@@ -1,10 +1,17 @@
 <?php
+defined('_JEXEC') or die;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+require_once JPATH_COMPONENT.'/controller.php';
+
+/**
+ * Registration controller class for Users.
+ *
+ * @package     Joomla.Site
+ * @subpackage  com_users
+ * @since       1.6
  */
-//jimport('joomla.user.helper');
+class AstrologinControllerProcess extends UsersController
+{
 
 if(isset($_POST['register']))
 {

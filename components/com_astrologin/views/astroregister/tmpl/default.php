@@ -10,7 +10,7 @@ defined('_JEXEC') or die('Restricted access');
 </head>
 <body>
 <form enctype="application/x-www-form-urlencoded" method="post" class="form-horizontal"
-      action="/jvidya/components/com_astrologin/processRegistration.php">
+      action="<?php echo JRoute::_('index.php?option=com_astrologin&task=process.userregister'); ?>">
     <fieldset class="fieldscontent">
         <div class="control-group">
             <div class="control-label">Enter Username</div>

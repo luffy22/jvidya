@@ -2,7 +2,7 @@
     error_reporting(0);
     defined( '_JEXEC' ) or die( 'Restricted access' );
     JHtml::_('jquery.framework');       // Loads the Jquery framework in noConflict Mode
-    JHtml::_('bootstrap.framework'); // Loads the bootstrap framework in noConflict Mode
+    JHtml::_('bootstrap.framework');  // Loads the bootstrap framework in noConflict Mode
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
@@ -15,22 +15,22 @@
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/jui/css/bootstrap-responsive.min.css"/>
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/style.css" type="text/css" />
-<script async src="<?php echo $this->baseurl?>/media/jui/js/jquery.min.js" type="text/javascript" language="javascript"></script>
-<script async src="<?php echo $this->baseurl?>/media/jui/js/jquery-noconflict.js"></script>
-<script async src="<?php echo $this->baseurl?>/media/jui/js/jquery-migrate.js"></script>
-<script async src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/common.js" type="text/javascript" language="javascript"></script>
+<script src="<?php echo $this->baseurl?>/media/jui/js/jquery.min.js" type="text/javascript" language="javascript"></script>
+<script src="<?php echo $this->baseurl?>/media/jui/js/jquery-noconflict.js"></script>
+<script src="<?php echo $this->baseurl?>/media/jui/js/jquery-migrate.js"></script>
+<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/common.js" type="text/javascript" language="javascript"></script>
 <script>
   (function() {
     var cx = '006812877761787834600:kranbsbb5p8';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
-    gcse.async = true;
     gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
         '//www.google.com/cse/cse.js?cx=' + cx;
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
+<div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -41,9 +41,8 @@
 <!-- Place this tag after the last widget tag. -->
 <script type="text/javascript">
 (function() {
-var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+var po = document.createElement('script'); po.type = 'text/javascript'; 
 po.src = 'https://apis.google.com/js/platform.js';
-po.async = true;
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 })();
 </script>
