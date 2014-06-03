@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="content">
+	<name>plg_socialnetwork_buttons</name>
+	<author>Luffy Mugiwara</author>
+	<creationDate>March 2014</creationDate>
+	<licence>GNU General Public License version 2 or later</licence>
+	<authorEmail>admin@jyotishividya.co.in</authorEmail>
+	<authorUrl>https://www.facebook.com/luffy.mugiwara.58173</authorUrl>
+	<version>1.0</version>
+	<description>Plugin for social buttons in articles</description>
+	<files>
+		<filename plugin="socialnetwork">socialnetwork.php</filename>
+		<filename>index.html</filename>
+	</files>
+</extension>
+
