@@ -1,1 +1,0 @@
-Astro Login administration
