@@ -1,7 +1,6 @@
 <?php
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,7 +32,7 @@ defined('_JEXEC') or die('Restricted access');
                 <div class="control-label"><strong>Enter Image Value</strong></div>
                 <img id="captcha" src="/jvidya/securimage/securimage_show.php" alt="CAPTCHA Image" />
                 <input type="text" name="captcha_code" size="10" maxlength="6" />
-<a href="#" onclick="document.getElementById('captcha').src = '/jvidya/securimage/securimage_show.php?' + Math.random(); return false"><br/>[ Different Image ]</a>
+                <a href="#" onclick="document.getElementById('captcha').src = '/jvidya/securimage/securimage_show.php?' + Math.random(); return false"><br/>[ Different Image ]</a>
             </div>
         </div>
         <div class="control-group">

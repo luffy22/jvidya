@@ -55,15 +55,48 @@ function validateLogin()
 {
     var uname = document.getElementById("al_uname").value;
     var passwd = document.getElementById("al_passwd").value;
-    var dirname = '/components/com_astrologin/views/astrologin/tmpl/process.php';
+    var dirname = '/jvidya/components/com_astrologin/controllers/process.php';
     var data    = "data";
     jQuery.ajax({
         type: "POST",
         url : dirname,
-        data: "uname="+uname+"&passwd="+passwd+"data="+data,
+        data: "uname="+uname+"&passwd="+passwd+"&data="+data,
         dataType: 'text',
         
     }).done(function(data){alert(data)}).fail(function(){alert("fail")});
+}
+function validateRegister()
+{
+    var uname   = document.getElementById("ar_uname");
+    var passwd  = document.getElementById("ar_passwd");
+    var cpasswd = document.getElementById("ar_cpasswd");
+    var email   = document.getElementById("ar_email");
+    
+    if(uname.value==""||uname.value.length<5||uname.value.length>14)
+    {
+        alert("Enter 5-14 length alpha-numeric username");
+        return false;
+    }
+    else if(passwd.value==""||passwd.value.length<5||passwd.value.length>14)
+    {
+        alert("Enter 5-14 length alpha-numeric username");
+        return false;
+    }
+    else if(passwd.value != cpasswd.value)
+    {
+        alert("Passwords do not match");
+        return false;
+    }
+    else if(email.value=="")
+    {
+        alert("Please enter a valid email");
+        return false;
+    }
+    else
+    {
+        form.submit();
+        return true;
+    }
 }
 // The below function validates the login form
 /*function validateLoginForm()
