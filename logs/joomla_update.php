@@ -29,3 +29,11 @@
 2014-05-01T07:49:28+00:00	INFO	update	Deleting removed files and folders.
 2014-05-01T07:49:31+00:00	INFO	update	Cleaning up after installation.
 2014-05-01T07:49:31+00:00	INFO	update	Update to version 3.3.0 is complete.
+2014-06-16T07:12:48+00:00	INFO	update	Update started by user zoro123 (899). Old version is 3.3.0.
+2014-06-16T07:12:50+00:00	INFO	update	Downloading update file from .
+2014-06-16T07:13:11+00:00	INFO	update	File Joomla_3.3.x_to_3.3.1-Stable-Patch_Package.zip successfully downloaded.
+2014-06-16T07:13:11+00:00	INFO	update	Starting installation of new version.
+2014-06-16T07:13:12+00:00	INFO	update	Finalising installation.
+2014-06-16T07:13:13+00:00	INFO	update	Deleting removed files and folders.
+2014-06-16T07:13:18+00:00	INFO	update	Cleaning up after installation.
+2014-06-16T07:13:18+00:00	INFO	update	Update to version 3.3.1 is complete.

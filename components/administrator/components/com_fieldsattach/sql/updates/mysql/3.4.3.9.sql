@@ -1,1 +1,0 @@
-ALTER TABLE  `#__fieldsattach` ADD `positionarticle` tinyint(1) DEFAULT 0 AFTER  `showtitle`  ;

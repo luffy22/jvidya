@@ -1,16 +1,23 @@
 <?php
-// No direct access to this file
-defined('_JEXEC') or die('Restricted access');
+/**
+ * @package     Joomla.Site
+ * @subpackage  com_users
+ *
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
 
-$cookieLogin = $this->user->get('cookieLogin');
-
-if($this->user->get('guest')|| (!empty($cookieLogin)))
+defined('_JEXEC') or die;
+$session        =& JFactory::getSession();
+$sessuser       = $session->get('username');
+if (empty($sessuser))
 {
-    // The user is logged in or needs a password
-    echo $this->loadTemplate('login');
+	// The user is not logged in or needs to provide a password.
+	echo $this->loadTemplate('login');
 }
 else
 {
-    // load the logout template
-    echo $this->loadTemplate('logout');
+	// The user is already logged in.
+	$app = JFactory::getApplication();
+        $app->redirect(JRoute::_('index.php', false));
 }

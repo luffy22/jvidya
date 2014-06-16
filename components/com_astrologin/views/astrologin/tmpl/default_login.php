@@ -67,7 +67,8 @@ function checkLoginState()
         
     </div>
 </div>
-<form enctype="application/x-www-form-urlencoded" method="post" class="form-horizontal">
+<form enctype="application/x-www-form-urlencoded" method="post" class="form-horizontal"
+      action="<?php echo JRoute::_('index.php?option=com_astrologin&task=process.userlogin'); ?>">
     <fieldset class="fieldscontent">
         <div class="control-group">
             <div class="control-label">Enter Username</div>

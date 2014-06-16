@@ -6,7 +6,7 @@ class JConfig {
 	public $offline_image = 'images/maintenance.jpg';
 	public $sitename = 'Astro Isha';
 	public $editor = 'none';
-	public $captcha = '0';
+	public $captcha = 'recaptcha';
 	public $list_limit = '20';
 	public $access = '1';
 	public $debug = '0';
@@ -24,8 +24,8 @@ class JConfig {
 	public $helpurl = 'http://help.joomla.org/proxy/index.php?option=com_help&keyref=Help{major}{minor}:{keyref}';
 	public $ftp_host = '127.0.0.1';
 	public $ftp_port = '21';
-	public $ftp_user = '';
-	public $ftp_pass = '';
+	public $ftp_user = 'zoro123';
+	public $ftp_pass = 'DenaDena1985';
 	public $ftp_root = '';
 	public $ftp_enable = '0';
 	public $offset = 'UTC';
@@ -66,4 +66,9 @@ class JConfig {
 	public $cookie_domain = '';
 	public $cookie_path = '';
 	public $asset_id = '1';
+	public $proxy_enable = '0';
+	public $proxy_host = '';
+	public $proxy_port = '';
+	public $proxy_user = '';
+	public $proxy_pass = '';
 }

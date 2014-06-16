@@ -67,8 +67,22 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
             <a href="index.php"><img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/jv_logo.png" alt="Astro Isha" title="Navigate to Home Page" height="150" width="400" /></a>    
         </div>
         <div class="login-module">
+        <?php
+                $session        =& JFactory::getSession();
+                $sessuser       = $session->get('username');
+                if (empty($sessuser))
+                {
+        ?>
             <jdoc:include type="modules" name="userlogin" style="none" />
-        </div>
+      
+        <?php
+                }
+                else
+                {
+                    echo trim($sessuser);
+                }
+        ?>
+              </div>
     </div>
     <div class="header-menu visible-desktop">
         <div class="home_icon">

@@ -5,35 +5,37 @@ jimport('joomla.application.component.modelitem');
 
 class AstroLoginModelProcess extends JModelItem
 {
+    public $username;
+    public $email;
     public function registerUser($user_details)
     {
-        $username       = $user_details['username'];
-        $password       = $user_details['password'];
-        $email          = $user_details['email'];
-        $logintype      = $user_details['logintype'];
-        $joindate       = $user_details['joindate'];
-        $webauthcode    = $user_details['webauthcode'];
-       
-        $db             = JFactory::getDbo();  // Get db connection
-        $query          = $db->getQuery(true);
-        
-        /*$query         -> select($db->quoteName(array('username', 'email')));
-        $query         -> from($db->quoteName('#__webusers'));
-        $query          -> where($db->quoteName('username').'LIKE'.$db->quote($username)||$db->quoteName('email').'LIKE'.$db->quote($email));
-        $db             ->setQuery($query);
-        $db            ->execute();
-        $row            = $db->getNumRows($query);
-        print_r($row);
-        if($row>0)
+        $this->username     = $user_details['username'];
+        $password           = sha1($user_details['password']);
+        $this->email        = $user_details['email'];
+        $logintype          = $user_details['logintype'];
+        $joindate           = $user_details['joindate'];
+        $webauthcode        = $user_details['webauthcode'];
+
+        //$session            = JFactory::getSession();
+        //$session            ->set('cusername', $username);
+        //$session            ->set('cemail', $email);
+        if($this->checkUsername()==false)
         {
-            echo "Email or Username already exists. Please try alternate Username/Email";
+            echo "Username already exists in database";
+
+        }
+        else if($this->checkEmail()==false)
+        {
+            echo "Email already exists in the database";
         }
         else
-        {*/
-            $query         = $db->getQuery(true);
+        {
+            $db             = JFactory::getDbo();  // Get db connection
+            $query          = $db->getQuery(true);
+
             //$query    = $db->getQuery(true);
             $columns        = array('username','password','email', 'logintype', 'joindate', 'webauthcode');
-            $values         = array($db->quote($username), $db->quote($password), $db->quote($email),
+            $values         = array($db->quote($this->username), $db->quote($password), $db->quote($this->email),
                                     $db->quote($logintype), $db->quote($joindate), $db->quote($webauthcode));
             // Prepare the insert query
             $query    ->insert($db->quoteName('#__webusers'))
@@ -51,7 +53,76 @@ class AstroLoginModelProcess extends JModelItem
             {
                 echo "Fail to add data";
             }
-        //}
+        }
     }
+    public function checkUsername()
+    {
+        $db             = JFactory::getDbo();  // Get db connection
+        $query          = $db->getQuery(true);
+        $username       = $this->username;
+        $query          -> select('COUNT(*)');
+        $query          -> from($db->quoteName('#__webusers'));
+        $query          -> where($db->quoteName('username').'='.$db->quote($username));
+        $db             ->setQuery($query);
+        $count          = count($db->loadResult());
+   
+        if($count>0)
+        {
+           return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+     public function checkEmail()
+    {
+        $db             = JFactory::getDbo();  // Get db connection
+        $query          = $db->getQuery(true);
+        $email          = $this->email;
+        $query          -> select('COUNT(*)');
+        $query          -> from($db->quoteName('#__webusers'));
+        $query          -> where($db->quoteName('email').'='.$db->quote($email));
+        $db             ->setQuery($query);
+        $count          = count($db->loadResult());
+        
+        if($count>0)
+        {
+           return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    function getDetails($login_details)
+    {
+        $loginuname     = $login_details['username'];
+        $loginpwd       = sha1($login_details['password']);
+
+        $remember       = $login_details['rememberme'];
+        
+        $db             = JFactory::getDbo();  // Get db connection
+        $query          = $db->getQuery(true);
+        $query          ->select($db->quoteName(array('username', 'password', 'Uid')), COUNT(1));
+        $query          ->from($db->quoteName('#__webusers'));
+        $query          ->where(($db->quoteName('username').'='.$db->quote($loginuname))AND($db->quoteName('password').'='.$db->quote($loginpwd)));
+        $db             ->setQuery($query);
+        $count          = count($db->loadResult());
+        $row            =$db->loadAssoc();
+
+        if($count>0&&$loginuname==$row['username'])
+        {
+            $session =& JFactory::getSession();
+            $session->set( 'username', $row['username'] );
+            $session->set('uid',$row['Uid']);
+           
+        }
+        else
+        {
+            echo "<br/>Invalid Login Credentials";
+        }
+    }
+   
 }
 ?>

@@ -30,9 +30,12 @@ defined('_JEXEC') or die('Restricted access');
         <div class="control-group">
             <div class="controls">
                 <div class="control-label"><strong>Enter Image Value</strong></div>
-                <img id="captcha" src="/jvidya/securimage/securimage_show.php" alt="CAPTCHA Image" />
-                <input type="text" name="captcha_code" size="10" maxlength="6" />
-                <a href="#" onclick="document.getElementById('captcha').src = '/jvidya/securimage/securimage_show.php?' + Math.random(); return false"><br/>[ Different Image ]</a>
+                <?php
+                    JPluginHelper::importPlugin('captcha');
+                    $dispatcher = JDispatcher::getInstance();
+                    $dispatcher->trigger('onInit','dynamic_recaptcha_1')
+                ?>
+                <div id="dynamic_recaptcha_1"></div>
             </div>
         </div>
         <div class="control-group">

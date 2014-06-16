@@ -55,15 +55,8 @@ function validateLogin()
 {
     var uname = document.getElementById("al_uname").value;
     var passwd = document.getElementById("al_passwd").value;
-    var dirname = '/jvidya/components/com_astrologin/controllers/process.php';
-    var data    = "data";
-    jQuery.ajax({
-        type: "POST",
-        url : dirname,
-        data: "uname="+uname+"&passwd="+passwd+"&data="+data,
-        dataType: 'text',
-        
-    }).done(function(data){alert(data)}).fail(function(){alert("fail")});
+   
+   form.submit();
 }
 function validateRegister()
 {
