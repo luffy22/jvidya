@@ -79,7 +79,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
                 }
                 else
                 {
-                    echo trim($sessuser);
+                    echo trim($sessuser);?><a href="index.php?option=com_astrologin&task=process.userlogout&user=<?php echo $sessuser; ?>" class="btn btn-danger">Log Out</a>
+                <?php
+                
                 }
         ?>
               </div>

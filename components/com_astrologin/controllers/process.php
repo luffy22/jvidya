@@ -69,6 +69,11 @@ public function userlogin()
         $model->getDetails($login_details);
     }
 }
-
+public function userlogout()
+{
+    $user                   = $_GET['user'];
+    $model                  = &$this->getModel('process');
+    $model->logoutuser($user);
+}
 }
 ?>

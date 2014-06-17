@@ -104,25 +104,55 @@ class AstroLoginModelProcess extends JModelItem
         
         $db             = JFactory::getDbo();  // Get db connection
         $query          = $db->getQuery(true);
-        $query          ->select($db->quoteName(array('username', 'password', 'Uid')), COUNT(1));
+        $query          ->select($db->quoteName(array('username', 'password', 'email','verification')), COUNT(1));
         $query          ->from($db->quoteName('#__webusers'));
         $query          ->where(($db->quoteName('username').'='.$db->quote($loginuname))AND($db->quoteName('password').'='.$db->quote($loginpwd)));
         $db             ->setQuery($query);
         $count          = count($db->loadResult());
         $row            =$db->loadAssoc();
 
-        if($count>0&&$loginuname==$row['username'])
+        if($count>0&&$row['verification']!= '0')
         {
-            $session =& JFactory::getSession();
-            $session->set( 'username', $row['username'] );
-            $session->set('uid',$row['Uid']);
+            $lastlogin  = date("Y/m/d-G:i:s");
+            $query      ->clear();
+            
+            $query      ->getQuery(true);
+            $query      ->update($db->quoteName('#__webusers'))
+                        ->set($db->quoteName('lastlogin').'='.$db->quote($lastlogin))
+                        ->where($db->quoteName('username').'='.$db->quote($loginuname));
+            $db         ->setQuery($query);
+            $insertlogin   =$db->query();
+
+            $session    =& JFactory::getSession();
+            $session    ->set( 'username', $row['username'] );
+            $session    ->set('email',$row['email']);
+            $app        =&JFactory::getApplication();
+            $app        ->redirect('index.php');        
            
+        }
+        else if($count>0&&$row['verification']=='0')
+        {
+            $email      = $row['email'];
+            $app        =&JFactory::getApplication();
+            $app        ->redirect("index.php?option=com_astrologin&view=validateuser&email='$email'"); 
         }
         else
         {
             echo "<br/>Invalid Login Credentials";
         }
     }
-   
+   public function logoutuser($user)
+   {
+       $session         =& JFactory::getSession();
+       $sessuser        = $session->get('username');
+
+       if((!empty($sessuser))&&($sessuser==$user))
+       {
+           $session->clear('username');
+           $session->clear('email');
+           $app        =&JFactory::getApplication();
+           $app        ->redirect('index.php'); 
+       }
+   }
 }
 ?>
