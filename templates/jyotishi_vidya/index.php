@@ -1,4 +1,4 @@
-<?php 
+    <?php 
     error_reporting(0);
     defined( '_JEXEC' ) or die( 'Restricted access' );
     JHtml::_('jquery.framework');       // Loads the Jquery framework in noConflict Mode
@@ -15,48 +15,6 @@
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/media/jui/css/bootstrap-responsive.min.css"/>
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/style.css" type="text/css" />
-<script src="<?php echo $this->baseurl?>/media/jui/js/jquery.min.js" type="text/javascript" language="javascript"></script>
-<script src="<?php echo $this->baseurl?>/media/jui/js/jquery-noconflict.js"></script>
-<script src="<?php echo $this->baseurl?>/media/jui/js/jquery-migrate.js"></script>
-<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/common.js" type="text/javascript" language="javascript"></script>
-<script>
-  (function() {
-    var cx = '006812877761787834600:kranbsbb5p8';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=220390744824296&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!-- Place this tag after the last widget tag. -->
-<script type="text/javascript">
-(function() {
-var po = document.createElement('script'); po.type = 'text/javascript'; 
-po.src = 'https://apis.google.com/js/platform.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-})();
-</script>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-49809214-1', 'astroisha.com');
-  ga('send', 'pageview');
-
-</script>
 </head>
 <body>
 <div id="fb-root"></div>
@@ -68,23 +26,22 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
         </div>
         <div class="login-module">
         <?php
-                $session        =& JFactory::getSession();
-                $sessuser       = $session->get('username');
-                if (empty($sessuser))
-                {
+            $session        =& JFactory::getSession();
+            $sessuser       = $session->get('username');
+            $sessemail      = $session->get('email');
+            if((empty($sessuser))&&(empty($sessemail)))
+            {
         ?>
-            <jdoc:include type="modules" name="userlogin" style="none" />
-      
+                <jdoc:include type="modules" name="userlogin" style="none" />
         <?php
-                }
-                else
-                {
-                    echo trim($sessuser);?><a href="index.php?option=com_astrologin&task=process.userlogout&user=<?php echo $sessuser; ?>" class="btn btn-danger">Log Out</a>
-                <?php
-                
-                }
+            }
+            else
+            {
+                echo trim($sessuser);?><a href="index.php?option=com_astrologin&task=process.userlogout&user=<?php echo $sessuser; ?>" class="btn btn-danger">Log Out</a>
+        <?php
+            }
         ?>
-              </div>
+        </div>
     </div>
     <div class="header-menu visible-desktop">
         <div class="home_icon">
@@ -159,5 +116,47 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
         <jdoc:include type="modules" name="footer" />
     </div>
 </div>
+<!--Load the scripts -->
+<script src="<?php echo $this->baseurl?>/media/jui/js/jquery.min.js" type="text/javascript" language="javascript"></script>
+<script src="<?php echo $this->baseurl?>/media/jui/js/jquery-noconflict.js"></script>
+<script src="<?php echo $this->baseurl?>/media/jui/js/jquery-migrate.js"></script>
+<script src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/js/common.js" type="text/javascript" language="javascript"></script>
+<script>
+  (function() {
+    var cx = '006812877761787834600:kranbsbb5p8';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=220390744824296&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Place this tag after the last widget tag. -->
+<script type="text/javascript">
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; 
+po.src = 'https://apis.google.com/js/platform.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49809214-1', 'astroisha.com');
+  ga('send', 'pageview');
+
+</script>
 </body>
 </html>

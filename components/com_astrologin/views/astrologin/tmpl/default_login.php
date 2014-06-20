@@ -4,7 +4,7 @@ defined('_JEXEC') or die;
 <html>
 <head>
 <title>Astro Isha Login</title>
-<script type="text/javascript">
+<!--<script type="text/javascript">
     window.fbAsyncInit = function() {
   FB.init({
     appId      : '220390744824296',
@@ -52,10 +52,10 @@ function checkLoginState()
         'into Facebook.';
     }
   }
-</script>
+</script>-->
 </head>
 <body>
-<div class="social-group">
+<!--<div class="social-group">
     <div class="fb-label">
         <fb:login-button scope="public_profile,email" data-size="large" onlogin="checkLoginState();">
         </fb:login-button>
@@ -66,7 +66,13 @@ function checkLoginState()
     <div class="google-login">
         
     </div>
-</div>
+</div>-->
+<?php
+    if(isset($_GET['confirmuser']))
+    {
+        echo "User Confirmation Successful. Please Login in";
+    }
+?>
 <form enctype="application/x-www-form-urlencoded" method="post" class="form-horizontal"
       action="<?php echo JRoute::_('index.php?option=com_astrologin&task=process.userlogin'); ?>">
     <fieldset class="fieldscontent">

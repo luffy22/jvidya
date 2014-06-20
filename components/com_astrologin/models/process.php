@@ -5,13 +5,12 @@ jimport('joomla.application.component.modelitem');
 
 class AstroLoginModelProcess extends JModelItem
 {
-    public $username;
-    public $email;
+    // register user and send notification email
     public function registerUser($user_details)
     {
-        $this->username     = $user_details['username'];
+        $username     = $user_details['username'];
         $password           = sha1($user_details['password']);
-        $this->email        = $user_details['email'];
+        $email        = $user_details['email'];
         $logintype          = $user_details['logintype'];
         $joindate           = $user_details['joindate'];
         $webauthcode        = $user_details['webauthcode'];
@@ -19,12 +18,12 @@ class AstroLoginModelProcess extends JModelItem
         //$session            = JFactory::getSession();
         //$session            ->set('cusername', $username);
         //$session            ->set('cemail', $email);
-        if($this->checkUsername()==false)
+        if($this->checkUsername($username)==false)
         {
             echo "Username already exists in database";
 
         }
-        else if($this->checkEmail()==false)
+        else if($this->checkEmail($email)==false)
         {
             echo "Email already exists in the database";
         }
@@ -33,9 +32,9 @@ class AstroLoginModelProcess extends JModelItem
             $db             = JFactory::getDbo();  // Get db connection
             $query          = $db->getQuery(true);
 
-            //$query    = $db->getQuery(true);
+            $query    = $db->getQuery(true);
             $columns        = array('username','password','email', 'logintype', 'joindate', 'webauthcode');
-            $values         = array($db->quote($this->username), $db->quote($password), $db->quote($this->email),
+            $values         = array($db->quote($username), $db->quote($password), $db->quote($email),
                                     $db->quote($logintype), $db->quote($joindate), $db->quote($webauthcode));
             // Prepare the insert query
             $query    ->insert($db->quoteName('#__webusers'))
@@ -44,10 +43,12 @@ class AstroLoginModelProcess extends JModelItem
             // Set the query using our newly populated query object and execute it
             $db             ->setQuery($query);
             $result          = $db->query();
-
+            
+            // sending notification email via function
             if($result)
             {
-               header('Location: index.php');
+               $credentials     = array('email'=>$email,'username'=>$username);
+               $this->sendAuthMail($credentials);
             }
             else
             {
@@ -55,17 +56,17 @@ class AstroLoginModelProcess extends JModelItem
             }
         }
     }
-    public function checkUsername()
+    // Check if Username present in DB
+    public function checkUsername($username)
     {
         $db             = JFactory::getDbo();  // Get db connection
         $query          = $db->getQuery(true);
-        $username       = $this->username;
-        $query          -> select('COUNT(*)');
+        $query          -> select($db->quoteName('username'));
         $query          -> from($db->quoteName('#__webusers'));
         $query          -> where($db->quoteName('username').'='.$db->quote($username));
         $db             ->setQuery($query);
-        $count          = count($db->loadResult());
-   
+        $count          = count($db->loadAssoc());
+
         if($count>0)
         {
            return false;
@@ -75,17 +76,17 @@ class AstroLoginModelProcess extends JModelItem
             return true;
         }
     }
-     public function checkEmail()
+    // Check if Email present in DB
+     public function checkEmail($email)
     {
         $db             = JFactory::getDbo();  // Get db connection
         $query          = $db->getQuery(true);
-        $email          = $this->email;
-        $query          -> select('COUNT(*)');
+        $query          -> select($db->quoteName('email'));
         $query          -> from($db->quoteName('#__webusers'));
         $query          -> where($db->quoteName('email').'='.$db->quote($email));
         $db             ->setQuery($query);
-        $count          = count($db->loadResult());
-        
+        $count          = count($db->loadAssoc());
+
         if($count>0)
         {
            return false;
@@ -95,6 +96,7 @@ class AstroLoginModelProcess extends JModelItem
             return true;
         }
     }
+    // Login 
     function getDetails($login_details)
     {
         $loginuname     = $login_details['username'];
@@ -104,9 +106,9 @@ class AstroLoginModelProcess extends JModelItem
         
         $db             = JFactory::getDbo();  // Get db connection
         $query          = $db->getQuery(true);
-        $query          ->select($db->quoteName(array('username', 'password', 'email','verification')), COUNT(1));
+        $query          ->select($db->quoteName(array('username', 'email', 'password', 'email','verification')), COUNT(1));
         $query          ->from($db->quoteName('#__webusers'));
-        $query          ->where(($db->quoteName('username').'='.$db->quote($loginuname))AND($db->quoteName('password').'='.$db->quote($loginpwd)));
+        $query          ->where((($db->quoteName('username').'='.$db->quote($loginuname))||($db->quoteName('email').'='.$db->quote($loginuname)))AND($db->quoteName('password').'='.$db->quote($loginpwd)));
         $db             ->setQuery($query);
         $count          = count($db->loadResult());
         $row            =$db->loadAssoc();
@@ -141,6 +143,7 @@ class AstroLoginModelProcess extends JModelItem
             echo "<br/>Invalid Login Credentials";
         }
     }
+    // Logout the User
    public function logoutuser($user)
    {
        $session         =& JFactory::getSession();
@@ -153,6 +156,67 @@ class AstroLoginModelProcess extends JModelItem
            $app        =&JFactory::getApplication();
            $app        ->redirect('index.php'); 
        }
+   }
+   // Sending Authentication Mail on Registration
+   public function sendAuthMail($credentials)
+   {
+        $email          = $credentials['email'];
+        $username       = $credentials['username'];
+        
+        $db             = JFactory::getDbo();  // Get db connection
+        $query          = $db->getQuery(true);
+        $query          ->select($db->quoteName('webauthcode'), COUNT(1));
+        $query          ->from($db->quoteName('#__webusers'));
+        $query          ->where($db->quoteName('email').'='.$db->quote($email));
+        $db             ->setQuery($query);
+        $count          = count($db->loadResult());
+        $row            =$db->loadAssoc();
+        $webauth        = $row['webauthcode'];
+        $weburl         = "index.php?option=com_astrologin&view=confirm&ref=$email&auth=$webauth";
+        
+        $mailer         = JFactory::getMailer();
+        $recepient      = $email;
+        $part1          = "Confirmation Email. Click on the link below\n";
+        $part2          = $_SERVER['SERVER_NAME'].'/'.$weburl;
+        $subject        = "Email Verification";
+        $body           = $part1.$part2;
+
+        $send           = $mailer->sendMail('admin@astroisha.com', 'Luffy Mugiwara<Administrator>', $recepient, $subject, $body);
+        if( $send !== true ) 
+        {
+            echo 'Error sending email: ' . $send->__toString();
+        }
+        else
+        {
+            echo 'Mail sent. Please confirm email link to successfully register';
+        }
+   }
+   public function ConfirmUser($details)
+   {
+        $authref            = $details['auth'];
+        $emailref          = $details['email'];
+       
+        $db             = JFactory::getDbo();  // Get db connection
+        $query          = $db->getQuery(true);
+        $query          ->select($db->quoteName('webauthcode'), $db->quoteName('email'));
+        $query          ->from($db->quoteName('#__webusers'));
+        $query          ->where($db->quoteName('webauthcode').'='.$db->quote($authref).'AND'.$db->quoteName('email').'='.$db->quote($emailref));
+        $db             ->setQuery($query);
+        $count          = count($db->loadResult());
+        
+        if($count>0)
+        {
+            $query->clear();
+            $query      ->getQuery(true);
+            $query      ->update($db->quoteName('#__webusers'))
+                        ->set($db->quoteName('verification').'='.'1')
+                        ->where($db->quoteName('email').'='.$db->quote($emailref));
+            $db         ->setQuery($query);
+            $confirm    = $db->query();
+            
+            $app        =&JFactory::getApplication();
+            $app        ->redirect('index.php?option=com_astrologin&view=astrologin&confirmuser');
+        }
    }
 }
 ?>

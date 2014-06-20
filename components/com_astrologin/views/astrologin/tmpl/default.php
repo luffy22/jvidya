@@ -10,7 +10,9 @@
 defined('_JEXEC') or die;
 $session        =& JFactory::getSession();
 $sessuser       = $session->get('username');
-if (empty($sessuser))
+$sessemail      = $session->get('email');
+
+if(empty($sessuser))
 {
 	// The user is not logged in or needs to provide a password.
 	echo $this->loadTemplate('login');

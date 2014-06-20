@@ -75,5 +75,14 @@ public function userlogout()
     $model                  = &$this->getModel('process');
     $model->logoutuser($user);
 }
+public function ConfirmUser()
+{
+    if((isset($_POST['authref']))&&(isset($_POST['emailref'])))
+    {
+        $details            = array('email'=>$_POST['emailref'], 'auth'=>$_POST['authref']);
+        $model              = &$this->getModel('process');   // Add the array to model
+        $model              ->ConfirmUser($details);
+    }
+}
 }
 ?>
