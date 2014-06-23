@@ -216,5 +216,30 @@ class AstroLoginModelProcess extends JModelItem
             $app        ->redirect("index.php?option=com_astrologin&view=astrologin&confirm='yes'");
         }
    }
+   // Sends reset password link to email
+   public function ForgotPwd($forgotemail)
+   {
+        $weburl         = "index.php?option=com_astrologin&view=resetpwd&email=$forgotemail";
+        $mailer         = JFactory::getMailer();
+        $part1          = "Astro Isha \nClick on the link below to reset your Password\n";
+        $part2          = 'http://'.$_SERVER['SERVER_NAME'].'/'.$weburl;
+        $subject        = "Reset Password";
+        $body           = $part1.$part2;
+
+        $send           = $mailer->sendMail('admin@astroisha.com', 'Luffy Mugiwara<Administrator>', $forgotemail, $subject, $body);
+        if( $send !== true ) 
+        {
+            echo 'Error sending email: ' . $send->__toString();
+        }
+        else
+        {
+            echo 'Mail sent. Please check your email for reset password link';
+        }
+   }
+   // Reset Pwd and redirect to login
+   public function ResetPwd($resetpwd)
+   {
+       
+   }
 }
 ?>

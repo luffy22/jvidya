@@ -84,5 +84,27 @@ public function ConfirmUser()
         $model              ->ConfirmUser($details);
     }
 }
+public function forgotpwd()
+{
+    if(isset($_POST['forgotpwd']))
+    {
+        $forgotemail        = $_POST['forgotemail'];
+        $model              = &$this->getModel('process');
+        $model              ->ForgotPwd($forgotemail);
+    }
+}
+public function resetpwd()
+{
+    if(isset($_POST['resetpwd'])&&($_POST['forgotpwd']==$_POST['repass']))
+    {
+        $resetpwd           = $_POST['forgotpwd'];
+        $model              = &$this->getModel('process');
+        $model              ->ResetPwd($resetpwd);
+    }
+    else
+    {
+        echo "Passwords do not match";
+    }
+}
 }
 ?>
