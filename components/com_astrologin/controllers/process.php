@@ -77,9 +77,9 @@ public function userlogout()
 }
 public function ConfirmUser()
 {
-    if((isset($_POST['authref']))&&(isset($_POST['emailref'])))
+    if((isset($_GET['ref']))&&(isset($_GET['email'])))
     {
-        $details            = array('email'=>$_POST['emailref'], 'auth'=>$_POST['authref']);
+        $details            = array('email'=>$_GET['email'], 'auth'=>$_GET['ref']);
         $model              = &$this->getModel('process');   // Add the array to model
         $model              ->ConfirmUser($details);
     }

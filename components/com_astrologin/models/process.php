@@ -101,18 +101,16 @@ class AstroLoginModelProcess extends JModelItem
     {
         $loginuname     = $login_details['username'];
         $loginpwd       = sha1($login_details['password']);
-
         $remember       = $login_details['rememberme'];
-        
         $db             = JFactory::getDbo();  // Get db connection
         $query          = $db->getQuery(true);
-        $query          ->select($db->quoteName(array('username', 'email', 'password', 'email','verification')), COUNT(1));
+        $query          ->select($db->quoteName(array('username', 'email', 'password', 'email','verification')));
         $query          ->from($db->quoteName('#__webusers'));
-        $query          ->where((($db->quoteName('username').'='.$db->quote($loginuname))||($db->quoteName('email').'='.$db->quote($loginuname)))AND($db->quoteName('password').'='.$db->quote($loginpwd)));
+        $query          ->where((($db->quoteName('username').'='.$db->quote($loginuname)).'OR'.($db->quoteName('username').'='.$db->quote($loginuname))).'AND'.($db->quoteName('password').'='.$db->quote($loginpwd)));
         $db             ->setQuery($query);
         $count          = count($db->loadResult());
         $row            =$db->loadAssoc();
-
+        
         if($count>0&&$row['verification']!= '0')
         {
             $lastlogin  = date("Y/m/d-G:i:s");
@@ -172,12 +170,12 @@ class AstroLoginModelProcess extends JModelItem
         $count          = count($db->loadResult());
         $row            =$db->loadAssoc();
         $webauth        = $row['webauthcode'];
-        $weburl         = "index.php?option=com_astrologin&view=confirm&ref=$email&auth=$webauth";
+        $weburl         = "index.php?option=com_astrologin&task=process.ConfirmUser&email=$email&ref=$webauth";
         
         $mailer         = JFactory::getMailer();
         $recepient      = $email;
         $part1          = "Confirmation Email. Click on the link below\n";
-        $part2          = $_SERVER['SERVER_NAME'].'/'.$weburl;
+        $part2          = 'http://'.$_SERVER['SERVER_NAME'].'/'.$weburl;
         $subject        = "Email Verification";
         $body           = $part1.$part2;
 
@@ -215,7 +213,7 @@ class AstroLoginModelProcess extends JModelItem
             $confirm    = $db->query();
             
             $app        =&JFactory::getApplication();
-            $app        ->redirect('index.php?option=com_astrologin&view=astrologin&confirmuser');
+            $app        ->redirect("index.php?option=com_astrologin&view=astrologin&confirm='yes'");
         }
    }
 }

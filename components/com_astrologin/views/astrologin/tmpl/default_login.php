@@ -68,7 +68,7 @@ function checkLoginState()
     </div>
 </div>-->
 <?php
-    if(isset($_GET['confirmuser']))
+    if(isset($_GET['confirm'])&&($_GET['confirm']=='yes'))
     {
         echo "User Confirmation Successful. Please Login in";
     }
@@ -96,6 +96,9 @@ function checkLoginState()
         </div>
     </fieldset>
 </form>
+<div class="controls">
+    <div class="focus"><a href="index.php?option=com_astrologin&view=forgot">Forgot Password</a></div>
     <div class="focus"><a href="index.php?option=com_astrologin&view=astroregister">Register With Us</a></div>
+</div>
 </body>
 </html>
