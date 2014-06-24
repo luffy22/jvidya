@@ -213,12 +213,13 @@ class AstroLoginModelProcess extends JModelItem
             $confirm    = $db->query();
             
             $app        =&JFactory::getApplication();
-            $app        ->redirect("index.php?option=com_astrologin&view=astrologin&confirm='yes'");
+            $app        ->redirect("index.php?option=com_astrologin&view=astrologin&confirm=yes");
         }
    }
    // Sends reset password link to email
    public function ForgotPwd($forgotemail)
    {
+       $recepient       = $forgotemail;
         $weburl         = "index.php?option=com_astrologin&view=resetpwd&email=$forgotemail";
         $mailer         = JFactory::getMailer();
         $part1          = "Astro Isha \nClick on the link below to reset your Password\n";
@@ -226,7 +227,7 @@ class AstroLoginModelProcess extends JModelItem
         $subject        = "Reset Password";
         $body           = $part1.$part2;
 
-        $send           = $mailer->sendMail('admin@astroisha.com', 'Luffy Mugiwara<Administrator>', $forgotemail, $subject, $body);
+        $send           = $mailer->sendMail('admin@astroisha.com', 'Luffy Mugiwara<Administrator>', $recepient, $subject, $body);
         if( $send !== true ) 
         {
             echo 'Error sending email: ' . $send->__toString();
@@ -237,9 +238,20 @@ class AstroLoginModelProcess extends JModelItem
         }
    }
    // Reset Pwd and redirect to login
-   public function ResetPwd($resetpwd)
+   public function ResetPwd($resetdetails)
    {
+       $email           = $resetdetails['resemail'];
+       $pwd             = $resetdetails['respwd'];
        
+       $db              = JFactory::getDbo();  // Get db connection
+       $query           = $db->getQuery(true);
+       $query           ->update($db->quoteName('#__webusers'))
+                        ->set($db->quoteName('password').'='.$db->quote($pwd))
+                        ->where($db->quoteName('email').'='.$db->quote($email));
+       $confirm         = $db->query();
+            
+        $app        =&JFactory::getApplication();
+        $app        ->redirect("index.php?option=com_astrologin&view=astrologin&reset=pwd");
    }
 }
 ?>

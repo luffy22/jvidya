@@ -7,7 +7,7 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-defined('_JEXEC') or die;
+define('_JEXEC', 1);
 
 /**
  * Helper for mod_login

@@ -97,9 +97,11 @@ public function resetpwd()
 {
     if(isset($_POST['resetpwd'])&&($_POST['forgotpwd']==$_POST['repass']))
     {
+        $resetemail         = $_POST['resetemail'];
         $resetpwd           = $_POST['forgotpwd'];
+        $resetdetails       = array('resemail'=>$resetemail, 'respwd'=> $resetpwd);
         $model              = &$this->getModel('process');
-        $model              ->ResetPwd($resetpwd);
+        $model              ->ResetPwd($resetdetails);
     }
     else
     {

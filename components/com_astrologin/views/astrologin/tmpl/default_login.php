@@ -72,33 +72,38 @@ function checkLoginState()
     {
         echo "User Confirmation Successful. Please Login in";
     }
+    else if(isset($_GET['reset']))
+    {
+        echo "Password successfully reset. Please Login in";
+    }
 ?>
+
 <form enctype="application/x-www-form-urlencoded" method="post" class="form-horizontal"
       action="<?php echo JRoute::_('index.php?option=com_astrologin&task=process.userlogin'); ?>">
     <fieldset class="fieldscontent">
         <div class="control-group">
-            <div class="control-label">Enter Username</div>
-            <div class="controls"><input type="text" name="username" id="al_uname" placeholder="Enter your username" /></div>
+            <div class="control-label2">Enter Username/Email</div>
+            <div class="controls2"><input type="text" name="username" id="al_uname" placeholder="Enter your username or email" /></div>
         </div>
         <div class="control-group">
-            <div class="control-label">Enter Password</div>
-            <div class="controls"><input type="password" name="password" id="al_passwd" placeholder="Enter your password" /></div>
+            <div class="control-label2">Enter Password</div>
+            <div class="controls2"><input type="password" name="password" id="al_passwd" placeholder="Enter your password" /></div>
         </div>
         <div  class="control-group">
-                <div class="control-label"><label>Remember Me</label></div>
-                <div class="controls"><input id="al_remember" type="checkbox" name="remember" class="inputbox" value="yes"/></div>
+                <div class="control-label2"><label>Remember Me</label></div>
+                <div class="controls2"><input id="al_remember" type="checkbox" name="remember" class="inputbox" value="yes"/></div>
         </div>
         <div class="control-group">
-            <div class="controls">
+            <div class="controls2">
                 <button type="submit" name="login" class="btn btn-primary" onclick="javascript:validateLogin();return false;">Login</button>
                 <button type="reset" name="cancel" class="btn btn-navbar">Cancel</button>
             </div>
         </div>
     </fieldset>
 </form>
-<div class="controls">
-    <div class="focus"><a href="index.php?option=com_astrologin&view=forgot">Forgot Password</a></div>
-    <div class="focus"><a href="index.php?option=com_astrologin&view=astroregister">Register With Us</a></div>
+<div class="control-group">
+    <div class="controls2"><a href="index.php?option=com_astrologin&view=forgot">Forgot Password</a></div>
+    <div class="controls2"><a href="index.php?option=com_astrologin&view=astroregister">Register With Us</a></div>
 </div>
 </body>
 </html>
