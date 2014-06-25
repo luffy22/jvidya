@@ -6,11 +6,6 @@
  * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
-
-defined('_JEXEC') or die;
-
-require_once JPATH_SITE.'/components/com_users/helpers/route.php';
-
 JHtml::_('behavior.keepalive');
 JHtml::_('bootstrap.tooltip');
 
@@ -18,7 +13,9 @@ JHtml::_('bootstrap.tooltip');
 <div id="login-link">
     <div class="btn"><a href="#" onclick="javascrit:showLogin();">Login</a></div>
 </div>
-<form id="login-form" class="form-inline">
+<div id="login-form">
+    <div class="error" id="error-msg">Invalid Credentials</div>
+<form class="form-inline">
     <div class="control-group">
         <div class="control-label">Enter Username or Email</div>
         <div class="controls"><input type="text" name="moduname" id="mod-uname" placeholder="Enter Username or Email" /></div>
@@ -34,3 +31,4 @@ JHtml::_('bootstrap.tooltip');
         </div>
     </div>
 </form>
+</div>

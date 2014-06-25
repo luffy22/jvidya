@@ -134,3 +134,19 @@ jQuery('#slideshow > div:first')
     .end()
     .appendTo('#slideshow');
 },  3000);
+
+function LoginUser()
+{
+
+    var moduname        = document.getElementById("mod-uname");
+    var modpwd          = document.getElementById("mod-pwd"); 
+    //var modcred         = jQuery.parseJSON('{"uname":moduname.value,"pwd":modpwd.value}');
+    
+    var request = jQuery.ajax({
+    url: "index.php?option=com_ajax&module=droplogin&format=raw&method=LoginUser",
+    data: "uname="+moduname.value+"&pwd="+modpwd.value,
+    dataType: "text"
+});
+   request.done(function(msg){alert(msg)});
+   request.fail(function(){alert("fail")}); 
+}
