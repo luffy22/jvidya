@@ -11,7 +11,7 @@ JHtml::_('bootstrap.tooltip');
 
 ?>
 <div id="login-link">
-    <div class="btn"><a href="#" onclick="javascrit:showLogin();">Login</a></div>
+    <div class="link"><a href="#" onclick="javascrit:showLogin();">Login</a></div>
 </div>
 <div id="login-form">
     <div class="error" id="error-msg">Invalid Credentials</div>

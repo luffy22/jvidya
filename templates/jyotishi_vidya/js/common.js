@@ -137,7 +137,7 @@ jQuery('#slideshow > div:first')
 
 function LoginUser()
 {
-
+    document.getElementById("loadergif").style.display = 'block';
     var moduname        = document.getElementById("mod-uname");
     var modpwd          = document.getElementById("mod-pwd"); 
     //var modcred         = jQuery.parseJSON('{"uname":moduname.value,"pwd":modpwd.value}');
@@ -147,6 +147,29 @@ function LoginUser()
     data: "uname="+moduname.value+"&pwd="+modpwd.value,
     dataType: "text"
 });
-   request.done(function(msg){alert(msg)});
-   request.fail(function(){alert("fail")}); 
+   request.done(function(msg)
+   {
+       if(msg=='invalid')
+       {
+           document.getElementById('error-msg').style.visibility = "visible";
+           document.getElementById("error-msg").innerHTML = "Invalid Login Credentials";
+           document.getElementById("loadergif").style.display = 'none';
+       }
+       else if(msg=='no-auth')
+       {
+           document.getElementById('error-msg').style.visibility = "visible";
+           document.getElementById("error-msg").innerHTML = "Please confirm email to register";
+           document.getElementById("loadergif").style.display = 'none';
+       }
+       else
+       {
+           document.getElementById("login-cred").innerHTML = msg;
+           document.getElementById("loadergif").style.display = 'none';
+       }
+   });
+   request.fail(function()
+   {
+       document.getElementById("login-cred").innerHTML  = "Unable to Fetch Login Credentials...";
+       document.getElementById("loadergif").style.display = 'none';
+   }); 
 }

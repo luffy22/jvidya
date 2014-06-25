@@ -48,18 +48,20 @@ class modDropLoginHelper
                 $session    ->set( 'username', $row['username'] );
                 $session    ->set('email',$row['email']);
                 
-                 echo trim($sessuser);?><a href="index.php?option=com_astrologin&task=process.userlogout&user=<?php echo $sessuser; ?>" class="btn btn-danger">Log Out</a>
+                $sessuser       = $session->get('username');
+                $sessemail      = $session->get('email');
+                echo trim($sessuser);?><a href="index.php?option=com_astrologin&task=process.userlogout&user=<?php echo $sessuser; ?>" class="btn btn-danger">Log Out</a>
             <?php
             }
             else if($count>0&&$row['verification']=='0')
             {
                 $email      = $row['email'];
                 $app        =&JFactory::getApplication();
-                $app        ->redirect("index.php?option=com_astrologin&view=validateuser&email='$email'"); 
+                echo "no";
             }
             else
             {
-                echo "<br/>Invalid Login Credentials";
+                echo "invalid";
             }    
         }
     }

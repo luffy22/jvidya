@@ -24,7 +24,7 @@
         <div class="header-inner">
             <a href="index.php"><img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/jv_logo.png" alt="Astro Isha" title="Navigate to Home Page" height="150" width="400" /></a>    
         </div>
-        <div class="login-module">
+        <div class="login-module" id="login-cred">
         <?php
             $session        =& JFactory::getSession();
             $sessuser       = $session->get('username');
@@ -68,6 +68,7 @@
         </div>
     </div>
 </div>
+<div id="loadergif" class="loader"><img src="<?php echo $this->baseurl ?>/images/loader.gif" /></div>
 <!-- Gives some space between header and body-->
 <div class="spacer"></div>
 <div class="webbanner"><jdoc:include type="modules" name="jbanner" style="none" /></div>
