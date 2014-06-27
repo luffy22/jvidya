@@ -5,6 +5,7 @@ jimport('joomla.application.component.modelitem');
 
 class AstroLoginModelProcess extends JModelItem
 {
+    
     // register user and send notification email
     public function registerUser($user_details)
     {
@@ -14,18 +15,18 @@ class AstroLoginModelProcess extends JModelItem
         $logintype          = $user_details['logintype'];
         $joindate           = $user_details['joindate'];
         $webauthcode        = $user_details['webauthcode'];
-
+        $app                =&JFactory::getApplication();
         //$session            = JFactory::getSession();
         //$session            ->set('cusername', $username);
         //$session            ->set('cemail', $email);
         if($this->checkUsername($username)==false)
         {
-            echo "Username already exists in database";
+            $app        ->redirect('index.php?option=com_astrologin&view=astroregister&dupuname=duplicate'); 
 
         }
         else if($this->checkEmail($email)==false)
         {
-            echo "Email already exists in the database";
+            $app        ->redirect('index.php?option=com_astrologin&view=astroregister&dupemail=duplicate2'); 
         }
         else
         {
@@ -52,7 +53,7 @@ class AstroLoginModelProcess extends JModelItem
             }
             else
             {
-                echo "Fail to add data";
+                $app        ->redirect('index.php?option=com_astrologin&view=astroregister&failure=fail'); 
             }
         }
     }
@@ -115,7 +116,7 @@ class AstroLoginModelProcess extends JModelItem
         {
             $lastlogin  = date("Y/m/d-G:i:s");
             $query      ->clear();
-            
+            $app        =&JFactory::getApplication();
             $query      ->getQuery(true);
             $query      ->update($db->quoteName('#__webusers'))
                         ->set($db->quoteName('lastlogin').'='.$db->quote($lastlogin))
@@ -126,19 +127,18 @@ class AstroLoginModelProcess extends JModelItem
             $session    =& JFactory::getSession();
             $session    ->set( 'username', $row['username'] );
             $session    ->set('email',$row['email']);
-            $app        =&JFactory::getApplication();
+            
             $app        ->redirect('index.php');        
            
         }
         else if($count>0&&$row['verification']=='0')
         {
             $email      = $row['email'];
-            $app        =&JFactory::getApplication();
             $app        ->redirect("index.php?option=com_astrologin&view=validateuser&email='$email'"); 
         }
         else
         {
-            echo "<br/>Invalid Login Credentials";
+            $app        ->redirect('index.php?option=com_astrologin&view=astrologin&failure=fail'); 
         }
     }
     // Logout the User
@@ -183,10 +183,12 @@ class AstroLoginModelProcess extends JModelItem
         if( $send !== true ) 
         {
             echo 'Error sending email: ' . $send->__toString();
+            echo "Please Go Back";
         }
         else
         {
-            echo 'Mail sent. Please confirm email link to successfully register';
+            $app        =&JFactory::getApplication();
+            $app        ->redirect('index.php?option=com_astrologin&view=astrologin&sendmail=success');
         }
    }
    public function ConfirmUser($details)
@@ -219,7 +221,7 @@ class AstroLoginModelProcess extends JModelItem
    // Sends reset password link to email
    public function ForgotPwd($forgotemail)
    {
-       $recepient       = $forgotemail;
+        $recepient       = $forgotemail;
         $weburl         = "index.php?option=com_astrologin&view=resetpwd&email=$forgotemail";
         $mailer         = JFactory::getMailer();
         $part1          = "Astro Isha \nClick on the link below to reset your Password\n";
@@ -234,7 +236,7 @@ class AstroLoginModelProcess extends JModelItem
         }
         else
         {
-            echo 'Mail sent. Please check your email for reset password link';
+            echo "Please check your email to reset password";
         }
    }
    // Reset Pwd and redirect to login

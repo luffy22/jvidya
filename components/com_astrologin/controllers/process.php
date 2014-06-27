@@ -15,7 +15,7 @@ public function userregister()
 {
     if(isset($_POST['register']))
     {
-        $code= JRequest::get('recaptcha_response_field');     
+        /*$code= JRequest::get('recaptcha_response_field');     
         JPluginHelper::importPlugin('captcha');
         $dispatcher = JDispatcher::getInstance();
         $res = $dispatcher->trigger('onCheckAnswer',$code);
@@ -24,7 +24,7 @@ public function userregister()
             die('Invalid Captcha Code.');
         }
         else
-        {
+        {*/
             $model          = $this->getModel('Process', 'AstroLoginModel');
             $username       = $_POST['username'];
             $password       = $_POST['password'];
@@ -36,7 +36,7 @@ public function userregister()
             $user_details   = array('username'=>$username,'password'=> $password, 'email'=> $email,'logintype'=> $logintype,'joindate'=>$joindate,'webauthcode'=>$webauthcode);
             $model          = &$this->getModel('process');  // Add the array to model
             $model->registerUser($user_details);
-        }
+        //}
     }
     else if(isset($_POST['fblogin']))
     {
