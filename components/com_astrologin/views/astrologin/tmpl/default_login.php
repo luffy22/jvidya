@@ -76,7 +76,13 @@ function checkLoginState()
     {
         echo "Password successfully reset. Please Login in";
     }
-?>
+    if(isset($_GET['sendmail'])&&($_GET['sendmail']=='success')): ?>
+    <div class="error" id="error-msg">Fail to add data. Please try again</div>
+<?php endif; ?>
+<?php
+    if(isset($_GET['failure'])&&($_GET['failure']=='fail')): ?>
+    <div class="error" id="error-msg">Fail to add data. Please try again</div>
+<?php endif; ?>
 
 <form enctype="application/x-www-form-urlencoded" method="post" class="form-horizontal"
       action="<?php echo JRoute::_('index.php?option=com_astrologin&task=process.userlogin'); ?>">
