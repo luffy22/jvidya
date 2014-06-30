@@ -134,7 +134,7 @@ class AstroLoginModelProcess extends JModelItem
         {
             $email      = $row['email'];
             $app        =&JFactory::getApplication();
-            $app        ->redirect("index.php?option=com_astrologin&view=validateuser&email='$email'"); 
+            $app        ->redirect("index.php?option=com_astrologin&view=validateuser&email=$email"); 
         }
         else
         {
