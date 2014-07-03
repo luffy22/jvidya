@@ -7,13 +7,15 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-defined('_JEXEC') or die;
-
 // Include the login functions only once
 require_once __DIR__ . '/helper.php';
 
 
-$msg	          = modNakshatraCompatHelper::showMessage();
-
-
+$girlsMenu                  = modNakshatraCompatHelper::showGirlsMenu();
+$girlsNakshatra             = modNakshatraCompatHelper::showGirlsNakshatra();
+$girlsPada                  = modNakshatraCompatHelper::showGirlsPada();
+$boysMenu                   = modNakshatraCompatHelper::showBoysMenu();
+$boysNakshatra              = modNakshatraCompatHelper::showBoysNakshatra();
+$boysPada                   = modNakshatraCompatHelper::showBoysPada();
+$layout                     = $params->get('layout', 'default');
 require JModuleHelper::getLayoutPath('mod_nakshatracompat', $layout);
