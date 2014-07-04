@@ -8,7 +8,11 @@
  */
 JHtml::_('behavior.keepalive');
 JHtml::_('bootstrap.tooltip');
-
+$session        =& JFactory::getSession();
+$sessuser       = $session->get('username');
+$sessemail      = $session->get('email');
+if((empty($sessuser))&&(empty($sessemail)))
+{
 ?>
 <div id="login-link">
     <div class="link"><a href="#" onclick="javascrit:showLogin();">Login</a></div>
@@ -32,3 +36,11 @@ JHtml::_('bootstrap.tooltip');
     </div>
 </form>
 </div>
+<?php
+}
+else
+{
+    echo trim($sessuser);?><a href="index.php?option=com_astrologin&task=process.userlogout&user=<?php echo $sessuser; ?>" class="btn btn-danger">Log Out</a>
+<?php
+}
+?>

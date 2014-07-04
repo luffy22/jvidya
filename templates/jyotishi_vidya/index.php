@@ -25,22 +25,7 @@
             <a href="index.php"><img src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/jv_logo.png" alt="Astro Isha" title="Navigate to Home Page" height="150" width="400" /></a>    
         </div>
         <div class="login-module" id="login-cred">
-        <?php
-            $session        =& JFactory::getSession();
-            $sessuser       = $session->get('username');
-            $sessemail      = $session->get('email');
-            if((empty($sessuser))&&(empty($sessemail)))
-            {
-        ?>
-                <jdoc:include type="modules" name="userlogin" style="none" />
-        <?php
-            }
-            else
-            {
-                echo trim($sessuser);?><a href="index.php?option=com_astrologin&task=process.userlogout&user=<?php echo $sessuser; ?>" class="btn btn-danger">Log Out</a>
-        <?php
-            }
-        ?>
+            <jdoc:include type="modules" name="userlogin" style="none" />
         </div>
     </div>
     <div class="header-menu visible-desktop">

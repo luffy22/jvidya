@@ -9,7 +9,5 @@
 // Include the login functions only once
 require_once __DIR__ . '/helper.php';
 
-
 $layout           = $params->get('layout', 'default');
-
 require JModuleHelper::getLayoutPath('mod_droplogin', $layout);
