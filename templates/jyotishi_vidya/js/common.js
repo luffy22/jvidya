@@ -139,6 +139,9 @@ function LoginUser()
 }
 function getGirlsNakshatra()
 {
+    document.getElementById('match_message').innerHTML = "";
+    document.getElementById('match_message').style.background = "none";
+    document.getElementById("match_message").style.background = "none";
     document.getElementById("loadergif").style.display = 'block';
     var g_rashi  = document.getElementById("g_rashi");
     g_rashi.style.background = "none";
@@ -171,6 +174,7 @@ function getGirlsNakshatra()
         request.fail(function()
         {
             alert("Fail to get data");
+             document.getElementById("loadergif").style.display = 'none';
         });
     }
 }
@@ -213,6 +217,8 @@ function getGirlsPada()
 }
 function getBoysNakshatra()
 {
+    document.getElementById('match_message').innerHTML = "";
+    document.getElementById('match_message').style.background = "none";
     document.getElementById("loadergif").style.display = 'block';
     var b_rashi  = document.getElementById("b_rashi");
     b_rashi.style.background = "none";
@@ -245,6 +251,7 @@ function getBoysNakshatra()
         request.fail(function()
         {
             alert("Fail to get data");
+            document.getElementById("loadergif").style.display = 'none';
         });
     }
 }
@@ -313,10 +320,10 @@ function checkCompatibility()
         });
         request.done(function(msg)
         {
+                document.getElementById("loadergif").style.display = 'none';
               if(msg=="error")
               {
                   alert("Fail to get data");
-                  document.getElementById("loadergif").style.display = 'none';
               }
               else
               {
@@ -327,7 +334,7 @@ function checkCompatibility()
                     document.getElementById('match_message').innerHTML = "Match Points are "+msg+" (Not Good Match)";
                     document.getElementById("match_message").style.background = "#FF0000";
                 }
-                else if(pts>18&&pts<28)
+                else if(pts>=18&&pts<=28)
                 {
                     document.getElementById('match_message').innerHTML = "Match Points are "+msg+" (Decent Match)";
                     document.getElementById("match_message").style.background = "#FFFF00";

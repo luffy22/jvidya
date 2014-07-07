@@ -12,5 +12,5 @@
   width: 100%;
   padding-top: 25px;
 }#g_rashi_notice,#b_rashi_notice{width: 180px;}
-.nakshatratable,.nakshatratr{width:450px;}
-.nakshatratd{width:220px;}.selectcomp{width:180px;}#match_message{width:180px;height:50px;padding:10px;background-color: #FFFFFF;border:1px solid black;font-weight: bold;}
+.nakshatratable,.nakshatratr{width:450px;margin: 10px 0;}
+.nakshatratdl{width:220px;float:left}.nakshatratdr{width:220px;float:right;}.selectcomp{width:180px;}#match_message{width:450px;height:50px;padding:10px;background-color: #FFFFFF;border:1px solid black;font-weight: bold;}

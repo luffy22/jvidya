@@ -14,6 +14,7 @@
  * @subpackage  mod_login
  * @since       1.5
  */
+
 class modDropLoginHelper
 {
     public function LoginUserAjax()

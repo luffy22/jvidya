@@ -34,6 +34,10 @@ if((empty($sessuser))&&(empty($sessemail)))
             <button type="button" class="btn" onclick="hideLogin();">Cancel</button>
         </div>
     </div>
+    <div class="control-group">
+		<div class="controls"><a href="index.php?option=com_astrologin&view=forgot">Forgot Password?</a></div>
+		<div class="controls"><a href="index.php?option=com_astrologin&view=astroregister">Register With Us</a></div>
+    </div>
 </form>
 </div>
 <?php

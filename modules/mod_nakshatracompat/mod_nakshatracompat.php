@@ -11,11 +11,11 @@
 require_once __DIR__ . '/helper.php';
 
 
-$girlsMenu                  = modNakshatraCompatHelper::showGirlsMenu();
-$girlsNakshatra             = modNakshatraCompatHelper::showGirlsNakshatra();
-$girlsPada                  = modNakshatraCompatHelper::showGirlsPada();
-$boysMenu                   = modNakshatraCompatHelper::showBoysMenu();
-$boysNakshatra              = modNakshatraCompatHelper::showBoysNakshatra();
-$boysPada                   = modNakshatraCompatHelper::showBoysPada();
+//$girlsMenu                  = modNakshatraCompatHelper::showGirlsMenu();
+//$girlsNakshatra             = modNakshatraCompatHelper::showGirlsNakshatra();
+//$girlsPada                  = modNakshatraCompatHelper::showGirlsPada();
+//$boysMenu                   = modNakshatraCompatHelper::showBoysMenu();
+//$boysNakshatra              = modNakshatraCompatHelper::showBoysNakshatra();
+//$boysPada                   = modNakshatraCompatHelper::showBoysPada();
 $layout                     = $params->get('layout', 'default');
 require JModuleHelper::getLayoutPath('mod_nakshatracompat', $layout);
